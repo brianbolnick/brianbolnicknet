@@ -1,0 +1,13 @@
+.grommetux-control-icon {
+    fill: #f5f5f5 !important;
+    stroke: #f5f5f5 !important;    
+}
+
+.home-info-box {
+    background-color: rgba(33, 33, 33, 0.7);
+    color: #f5f5f5;
+  }
+
+  .grommetux-value__value {
+    font-weight: 300;
+}
