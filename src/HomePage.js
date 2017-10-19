@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Container, Header, Menu, Dropdown } from 'semantic-ui-react';
+import { Container, Header, Menu, Dropdown, Icon } from 'semantic-ui-react';
 import { Card, Anchor, Columns, Box, Animate, Value, Label, Paragraph, Heading, Meter, Button, List, ListItem, Select } from 'grommet';
-
+import Carousel from 'nuka-carousel';
 // import AnnotatedMeter from 'grommet-addons/components/AnnotatedMeter';
 import BookIcon from 'grommet/components/icons/base/Book';
 import BriefcaseIcon from 'grommet/components/icons/base/Briefcase';
@@ -13,6 +13,46 @@ import Layout from './Layout.js';
 import Footer from './Footer.js';
 import './Home.css';
 import Brian from './img/brian.jpg';
+import createReactClass from 'create-react-class';
+
+
+const OverviewSlides = (props) => {
+    var Decorators = [{
+        component: createReactClass({
+          render() {
+            return (
+                <Icon link name='angle left'  inverted color='grey' size='big' onClick={this.props.previousSlide}/>
+            )
+          }
+        }),
+        position: 'BottomLeft',
+        style: {
+          padding: 20
+        }
+      },
+      {
+        component: createReactClass({
+          render() {
+            return (
+                <Icon link name='angle right'  inverted color='grey' size='big' onClick={this.props.nextSlide}/>
+            )
+          }
+        }),
+        position: 'BottomRight',
+        style: {
+          padding: 20
+        }
+      }
+    
+    ];
+      return (
+        <Carousel wrapAround={true} decorators={Decorators}>
+            <Professional />
+            <Education />
+            <Personal />
+        </Carousel>
+      )    
+}
 
 class Education extends Component {
     render() {
@@ -179,17 +219,22 @@ class Second extends Component {
 
         return (
             <div>
-                <Animate enter={{ "animation": "fade", "duration": 2000, "delay": 1500 }} keep={true}>
-                    <Columns
-                        size='medium'
-                        justify='center'
-                        masonry={true}
-                        maxCount={3}>
-                            <Professional />
-                            <Education />
-                            <Personal />
-                    </Columns>
-                </Animate>
+                <div className="hide-on-mobile">
+                    <Animate enter={{ "animation": "fade", "duration": 2000, "delay": 1500 }} keep={true}>                
+                        <Columns
+                            size='medium'
+                            justify='center'
+                            masonry={true}
+                            maxCount={3}>
+                                <Professional />
+                                <Education />
+                                <Personal />
+                        </Columns>
+                    </Animate>
+                </div>
+                <div style={{paddingLeft: '7%'}} className='hide-on-med-and-up' >                        
+                    <OverviewSlides />
+                </div>
             </div>
         )
     }
