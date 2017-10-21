@@ -22,8 +22,8 @@ h1.grommetux-heading.grommetux-heading--align-center.grommetux-heading--margin-s
 }
 
 .grommetux-box.grommetux-box--direction-column.grommetux-box--align-center.grommetux-box--responsive.grommetux-box--pad-medium.grommetux-box--margin-small.home-info-box {
-    min-height: 93vh;
-    max-height: 93vh;
+    min-height: 87vh;
+    max-height: 87vh;
 }
 
 .grommetux-paragraph {
@@ -33,12 +33,20 @@ h1.grommetux-heading.grommetux-heading--align-center.grommetux-heading--margin-s
 
 .grommetux-anchor--primary {
     /* color: #19A883 !important; */
-    color: #f37335 !important;
+    /* color: #f37335 !important; */
     /* color:  #78C3FB !important; */
+    color: #f5f5f5 !important;
 }
 
+.grommetux-anchor--primary .grommetux-control-icon {
+    /* fill: #865CD6 !important;
+    stroke: #865CD6 !important; */
+}
+
+
 .grommetux-anchor:hover {
-    color: #f35d14 !important;    
+    color: #f37335 !important;    
+    /* color: #f35d14 !important;     */
 }
 
 .ui.menu .item {
@@ -79,4 +87,29 @@ h1.grommetux-heading.grommetux-heading--align-center.grommetux-heading--margin-s
 
 .grommetux-box.grommetux-box--direction-column.grommetux-box--responsive.grommetux-box--pad-medium.grommetux-card__content {
     padding-left: 0 !important;
+}
+
+
+
+.ui.secondary.top.fixed.header-nav.menu {
+    background-color: #212121 !important;
+    border-radius: 0px !important;
+}
+
+.ui[class*="bottom fixed"].menu {
+    bottom: 10px;
+}
+
+.grommetux-control-icon.react-icon {
+    fill: #67DAF9 !important;
+    stroke: #67DAF9 !important;
+}
+
+.grommetux-control-icon.ruby-icon {
+    fill: #D2262E !important;
+    stroke: #D2262E !important;
+}
+
+.grommetux-meter--circle .grommetux-meter__values .grommetux-meter__slice.grommetux-color-index-graph-1, .grommetux-meter--circle .grommetux-meter__values .grommetux-meter__slice.grommetux-color-index-graph-5, .grommetux-meter--arc .grommetux-meter__values .grommetux-meter__slice.grommetux-color-index-graph-1, .grommetux-meter--arc .grommetux-meter__values .grommetux-meter__slice.grommetux-color-index-graph-5, .grommetux-meter--spiral .grommetux-meter__values .grommetux-meter__slice.grommetux-color-index-graph-1, .grommetux-meter--spiral .grommetux-meter__values .grommetux-meter__slice.grommetux-color-index-graph-5 {
+    stroke: #f9e33d !important;
 }
