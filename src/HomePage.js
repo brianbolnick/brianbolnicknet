@@ -107,7 +107,7 @@ class Education extends Component {
                         </Label>
                     </Box>
                 </Box>
-                <Table inverted  style={{ border: 'solid 1px #f9e33d', marginTop: '20px'}}>
+                <Table inverted  className='hide-on-mobile' style={{ border: 'solid 1px #f9e33d', marginTop: '20px'}}>
                     <Table.Header>
                         <Table.Row>
 
