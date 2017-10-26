@@ -9,6 +9,7 @@ export function getQueryParams() {
     }, {});
   }
 
+  console.log("api root", API_ROOT);
 
   export function fetchUserDetails(options) {
     const { token } = options;
