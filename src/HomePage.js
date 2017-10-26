@@ -19,8 +19,16 @@ import Brian from './img/brian.jpg';
 import createReactClass from 'create-react-class';
 import * as utils from './utils';
 
+const hostname = window && window.location && window.location.hostname;
+let clientId;
+if (hostname === 'localhost') {
+    clientId = '62c3258903ce1a2f842e';
+} else {
+    clientId = '0b5da5f8b2811097ff79';
+}
+
 const authorizeUrl = 'https://github.com/login/oauth/authorize';
-const clientId = '62c3258903ce1a2f842e';
+
 const scope = 'user';
 
 const jwt = JSON.parse(localStorage.getItem('jwt'));
@@ -351,8 +359,8 @@ class LoginButton extends Component {
         return (
             <Menu.Item>
                 {this.isLoggedIn()
-                    ? 
-                        <Button 
+                    ?
+                    <Button
                         label={jwt.name}
                         href="#"
                         secondary={true}
@@ -362,7 +370,7 @@ class LoginButton extends Component {
                         style={{ color: '#f5f5f5', fontSize: '1rem', fontWeight: '400' }} />
                     :
 
-                        <Button icon={<LoginIcon size='xsmall' />}
+                    <Button icon={<LoginIcon size='xsmall' />}
                         label='Login'
                         href={`${authorizeUrl}?client_id=${clientId}&scope=${scope}`}
                         secondary={true}
@@ -371,7 +379,7 @@ class LoginButton extends Component {
                         plain={false}
                         style={{ color: '#f5f5f5', fontSize: '1rem', fontWeight: '400' }} />
                 }
-                
+
             </Menu.Item>
         )
     }
