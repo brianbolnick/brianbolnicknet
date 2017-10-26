@@ -9,6 +9,7 @@
     "grommet-addons": "^0.5.0",
     "grommet-css": "^1.6.0",
     "immutability-helper": "^2.4.0",
+    "jwt-decode": "^2.2.0",
     "nuka-carousel": "^3.0.0",
     "react": "^15.6.2",
     "react-dom": "^15.6.2",

@@ -3,10 +3,12 @@ import './App.css';
 import Home from './HomePage.js';
 import ApiTool from './ApiTool.js';
 import NotFound from './NotFound.js';
+import AuthError from './AuthError.js';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { Route, withRouter, Switch } from 'react-router-dom';
 import { getQueryParams } from './utils';
 import '../node_modules/grommet-css';
+import  jwtDecode from 'jwt-decode';
 
 
 
@@ -16,7 +18,26 @@ class HomePage extends Component {
     super();
 
     const params = getQueryParams();
-    this.state = { token: params.token };
+    // console.log(params);
+    if (params.token != null) {
+      const jwt = jwtDecode(params.token);
+      // console.log(jwt);
+
+      this.state = { 
+        token: params.token,
+        login: jwt.login,
+        avatar: jwt.avatar_url,
+        name: jwt.name
+      };
+      
+      // console.log(jwt);
+      localStorage.setItem('auth_token', params.token);
+      localStorage.setItem('jwt', JSON.stringify(jwt));
+    } else {
+      this.state = { 
+        token: params.token
+      };
+    }
   }
 
   isLoggedIn() {
@@ -24,8 +45,7 @@ class HomePage extends Component {
   }
   render () {
     return (
-      <Home token={this.state.token}
-    />
+      <Home token={this.state.token} />
     )
   }
 }
@@ -48,6 +68,7 @@ class App extends Component {
         <Switch location={this.props.location}>
           <Route path="/" exact component={HomePage}/>
           <Route path="/api_tool" exact component={ApiTool}/>
+          <Route path="/auth_error" exact component={AuthError}/>
           <Route component={NotFound} />
         </Switch>
       </CSSTransition>

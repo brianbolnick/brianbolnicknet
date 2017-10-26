@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import axios from 'axios';
 import './ApiTool.css';
 import update from 'immutability-helper';
+import { API_ROOT } from './api-config';
 
 class Idea extends Component {
     handleClick = () => {
@@ -50,7 +51,7 @@ class IdeaForm extends Component {
         }
 
         axios.put(
-            `http://localhost:5000/api/v1/ideas/${this.props.idea.id}`,
+            `${API_ROOT}/api/v1/ideas/${this.props.idea.id}`,
             {
                 idea: idea
             })
@@ -93,7 +94,7 @@ class IdeasContainer extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:5000/api/v1/ideas.json')
+        axios.get(`${API_ROOT}/api/v1/ideas.json`)
             .then(response => {
                 console.log(response)
                 this.setState({ ideas: response.data })
@@ -103,7 +104,7 @@ class IdeasContainer extends Component {
 
     addNewIdea = () => {
         axios.post(
-            'http://localhost:5000/api/v1/ideas',
+            `${API_ROOT}/api/v1/ideas`,
             {
                 idea:
                 {
@@ -144,7 +145,7 @@ class IdeasContainer extends Component {
 
 
     deleteIdea = (id) => {
-        axios.delete(`http://localhost:5000/api/v1/ideas/${id}`)
+        axios.delete(`${API_ROOT}/api/v1/ideas/${id}`)
             .then(response => {
                 const ideaIndex = this.state.ideas.findIndex(x => x.id === id)
                 const ideas = update(this.state.ideas, { $splice: [[ideaIndex, 1]] })

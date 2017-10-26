@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import BookIcon from 'grommet/components/icons/base/Book';
 import BriefcaseIcon from 'grommet/components/icons/base/Briefcase';
 import PersonalIcon from 'grommet/components/icons/base/PersonalComputer';
-import LoginIcon from 'grommet/components/icons/base/Login';
+import LoginIcon from 'grommet/components/icons/base/SocialGithub';
 import ReactIcon from 'grommet/components/icons/base/PlatformReactjs';
 import RubyIcon from 'grommet/components/icons/base/Diamond';
 import Parallax from 'react-springy-parallax';
@@ -23,6 +23,7 @@ const authorizeUrl = 'https://github.com/login/oauth/authorize';
 const clientId = '62c3258903ce1a2f842e';
 const scope = 'user';
 
+const jwt = JSON.parse(localStorage.getItem('jwt'));
 
 const OverviewSlides = (props) => {
     var Decorators = [{
@@ -91,12 +92,12 @@ class Education extends Component {
 
                 <Box align='center'>
                     <Meter type='circle'
-                    size='xsmall'
-                    label={<Value value={84}
-                    units='%'
-                    size='small'
-                    responsive={true} />}
-                    value={84}
+                        size='xsmall'
+                        label={<Value value={84}
+                            units='%'
+                            size='small'
+                            responsive={true} />}
+                        value={84}
                     />
                     <Box direction='row'
                         justify='between'
@@ -107,7 +108,7 @@ class Education extends Component {
                         </Label>
                     </Box>
                 </Box>
-                <Table inverted  className='hide-on-mobile' style={{ border: 'solid 1px #f9e33d', marginTop: '20px'}}>
+                <Table inverted className='hide-on-mobile' style={{ border: 'solid 1px #f9e33d', marginTop: '20px' }}>
                     <Table.Header>
                         <Table.Row>
 
@@ -155,11 +156,11 @@ class Professional extends Component {
                     icon={<BriefcaseIcon size='medium' style={{ color: '#f5f5f5' }} />}
                     label='Implementation Consultant'
                 />
-                <Paragraph size='medium'>                    
-                    I work at an EdTech company called <Anchor label='Instructure' style={{color: 'rgb(34, 204, 233)'}} href='https://instructure.com' target='_blank' />. 
-                    In my role as an Implementation Consultant Project Manager, my main responsability is to aid Higher Ed Institutions with 
-                    start-to-end technical implementations of the <Anchor label='Canvas LMS' style={{color: 'rgb(34, 204, 233)'}} href='https://canvaslms.com' target='_blank' />. 
-                    You can read more about my tasks and experiences <Anchor label=' here' style={{color: 'rgb(34, 204, 233)'}} path='/professional' target='_blank' />. 
+                <Paragraph size='medium'>
+                    I work at an EdTech company called <Anchor label='Instructure' style={{ color: 'rgb(34, 204, 233)' }} href='https://instructure.com' target='_blank' />.
+                    In my role as an Implementation Consultant Project Manager, my main responsability is to aid Higher Ed Institutions with
+                    start-to-end technical implementations of the <Anchor label='Canvas LMS' style={{ color: 'rgb(34, 204, 233)' }} href='https://canvaslms.com' target='_blank' />.
+                    You can read more about my tasks and experiences <Anchor label=' here' style={{ color: 'rgb(34, 204, 233)' }} path='/professional' target='_blank' />.
                 </Paragraph>
                 <List>
                     <ListItem justify='between' >
@@ -177,7 +178,7 @@ class Professional extends Component {
                         justify='between'
                         pad={{ "between": "small" }}
                         responsive={false}>
-                        
+
                     </Box>
                 </Box>
             </Box>
@@ -324,7 +325,7 @@ class Landing extends Component {
                         pad='medium'
                         margin='small'
                         className='home-intro-box'>
-                        {this.props.token}
+                        This is a short bio about me.
                     </Box>
                 </Columns>
                 <Columns size='large'
@@ -337,7 +338,48 @@ class Landing extends Component {
     }
 }
 
+class LoginButton extends Component {
+    isLoggedIn() {
+
+        if ((jwt != null) && ((jwt.exp * 1000) >= Date.now())) {
+            return true;
+        }
+        return false;
+    }
+
+    render() {
+        return (
+            <Menu.Item>
+                {this.isLoggedIn()
+                    ? 
+                        <Button 
+                        label={jwt.name}
+                        href="#"
+                        secondary={true}
+                        accent={true}
+                        critical={false}
+                        plain={false}
+                        style={{ color: '#f5f5f5', fontSize: '1rem', fontWeight: '400' }} />
+                    :
+
+                        <Button icon={<LoginIcon size='xsmall' />}
+                        label='Login'
+                        href={`${authorizeUrl}?client_id=${clientId}&scope=${scope}`}
+                        secondary={true}
+                        accent={true}
+                        critical={false}
+                        plain={false}
+                        style={{ color: '#f5f5f5', fontSize: '1rem', fontWeight: '400' }} />
+                }
+                
+            </Menu.Item>
+        )
+    }
+}
+
 class HomePage extends Component {
+
+
     render() {
         const styles = {
             // fontFamily: 'Menlo-Regular, Menlo, monospace',
@@ -382,17 +424,7 @@ class HomePage extends Component {
                                         <Dropdown.Item as={Link} to='/api_tool' >Note Cards</Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown>
-
-                                <Menu.Item>
-                                    <Button icon={<LoginIcon size='xsmall' />}
-                                        label='Login'
-                                        href={`${authorizeUrl}?client_id=${clientId}&scope=${scope}`}
-                                        secondary={true}
-                                        accent={true}
-                                        critical={false}
-                                        plain={false}
-                                        style={{ color: '#f5f5f5', fontSize: '1rem', fontWeight: '400' }} />
-                                </Menu.Item>
+                                <LoginButton />
                             </Menu.Menu>
                         </Menu>
                         <Landing token={this.props.token} clickEvent={() => this.refs.parallax.scrollTo(1.2)} />

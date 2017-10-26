@@ -1,3 +1,5 @@
+import { API_ROOT } from './api-config';
+
 export function getQueryParams() {
     const query = window.location.search.substring(1);
     const pairs = query.split('&').map((str) => str.split('='));
@@ -7,11 +9,10 @@ export function getQueryParams() {
     }, {});
   }
 
-  const baseApiUrl = 'http://localhost:5000';
 
   export function fetchUserDetails(options) {
     const { token } = options;
-    const url = `${baseApiUrl}/user?token=${token}`;
+    const url = `${API_ROOT}/user?token=${token}`;
   
     return fetch(url, {
       headers: {
@@ -19,7 +20,8 @@ export function getQueryParams() {
       },
     })
     .then(response => {
-      return response.json();
+      // console.log(response.json());
+      return response.json();    
     })
     .catch(error => {
       console.error('Could not fetch user details', error);
