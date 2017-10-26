@@ -114,6 +114,18 @@ h1.grommetux-heading.grommetux-heading--align-center.grommetux-heading--margin-s
     stroke: #f9e33d !important;
 }
 
+h2.ui.header {
+    color: #f5f5f5;
+}
+
+p.grommetux-paragraph.grommetux-paragraph--medium {
+    font-size: 17px;
+}
+
+.ui.borderless.fluid.icon.three.item.menu {
+    background: transparent;
+}
+
 /* Mobile branding  */
 @media only screen and (max-width: 767px) and (min-width: 320px) {
     .grommetux-box.grommetux-box--direction-column.grommetux-box--align-center.grommetux-box--responsive.grommetux-box--pad-medium.grommetux-box--margin-small.home-info-box {

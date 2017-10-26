@@ -325,15 +325,66 @@ class Landing extends Component {
                         className='home-intro-box'>
                         <Card thumbnail={Brian}
                             heading='Brian Bolnick'
-                            description='Welcome! This site is under development.'
-                            link={<Anchor href=''
-                                label='' />} />
+                            description='Husband.   Father.   Developer.   Student.   Mormon.'
+                            link={
+                                <Menu icon borderless fluid widths={3}>
+                                  <Menu.Item
+                                    href="//twitter.com/brianbolnick"
+                                    target="_blank"
+                                    name="twitter"
+                                  >
+                                    <Icon
+                                      name="twitter square"
+                                      size="large"
+                                      style={{ color: "#F5F5F5" }}
+                                    />
+                                  </Menu.Item>        
+                  
+                                  <Menu.Item
+                                    href="//github.com/brianbolnick"
+                                    target="_blank"
+                                    name="github"
+                                  >
+                                    <Icon name="github" size="large" style={{ color: "#F5F5F5" }}/>
+                                  </Menu.Item>
+                                  
+                                  <Menu.Item
+                                    href="mailto:brianbolnick+web@gmail.com"
+                                    target="_blank"
+                                    name="mail outline"
+                                  >
+                                    <Icon name="mail outline" size="large" style={{ color: "#F5F5F5" }}/>
+                                  </Menu.Item>
+                                </Menu>
+                              } 
+                        />
                     </Box>
                     <Box align='center'
                         pad='medium'
                         margin='small'
                         className='home-intro-box'>
-                        This is a short bio about me.
+                        <Header as='h2'>
+                            <Icon name='user outline' />
+                            <Header.Content>
+                            Welcome to my site!
+                            </Header.Content>
+                        </Header>
+                        <Paragraph size='medium'>
+                            My name is Brian. I am a fast-paced multi-tasker juggling many of life's missions. 
+                            As a husband to an amazing wife and father to two wild children, I strive to work as hard 
+                            as I can at whatever I am doing. My only goal is to succeed, no matter the task.
+                        </Paragraph>
+                        
+                        <Paragraph size='medium'>
+                            I built this site so you can get to know me a little better and see some of my 
+                            development skills. Some of the tools on here don't really do much but demonstrate
+                            my understanding of important software engineering concepts and workflows. 
+                        </Paragraph>
+
+                        <Paragraph size='medium'>
+                            Please feel free to explore around and learn a little more about me. 
+                            Don't hesitate to contact me with any questions! Thanks for stopping by!
+                        </Paragraph>
                     </Box>
                 </Columns>
                 <Columns size='large'
