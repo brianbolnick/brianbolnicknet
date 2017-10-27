@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Menu, Header, Icon, Table, Image } from 'semantic-ui-react';
 import { Anchor, Columns, Box, Animate, Value, Label, Paragraph, Heading, Meter, List, ListItem } from 'grommet';
 import Typed from 'typed.js';
-// import AnnotatedMeter from 'grommet-addons/components/AnnotatedMeter';
 import BookIcon from 'grommet/components/icons/base/Book';
 import BriefcaseIcon from 'grommet/components/icons/base/Briefcase';
 import Pulse from 'grommet/components/icons/Pulse';
@@ -189,7 +188,7 @@ class Professional extends Component {
                         <Anchor className='prof-anchor' label='Migration Station' href='#' primary={true} />
                     </ListItem>
                     <ListItem justify='between' >
-                        <Anchor label='Canvas Community Repository' href='#' primary={true} />
+                        <Anchor label='Canvas Community Repository' href='https://github.com/unsupported/canvas' primary={true} />
                     </ListItem>
                     <ListItem justify='between' >
                         <Anchor label='LDAP and SAML Auth Servers' target="_blank" href='http://auth.brianbolnick.net/discovery.php' primary={true} />
@@ -234,19 +233,19 @@ class Personal extends Component {
                 <Paragraph size='medium'>
                     I love to build things in my spare time. I always strive to learn new technologies and techniques.
                     My largest project is a web application called "Destinder" for Destiny the Game. It allows users
-                    to search for other players to play with as well as view detailed statistics. It's build with a
+                    to search for other players to play with as well as view detailed statistics. It's built with a
                     Rails API backend and React frontend.
                 </Paragraph>
                 <div>
                     <List>
                         <ListItem justify='between' >
-                            <Anchor label='Destinder (Client)' href='#' primary={true} />
+                            <Anchor label='Destinder (Full Rails)' href='http://destinder.com' primary={true} />
+                        </ListItem> 
+                        <ListItem justify='between' >
+                            <Anchor label='Destinder (React/Rails)' href='https://destinder-client-beta.herokuapp.com/' primary={true} />
                         </ListItem>
                         <ListItem justify='between' >
-                            <Anchor label='Destinder (API)' href='#' primary={true} />
-                        </ListItem>
-                        <ListItem justify='between' >
-                            <Anchor label='This Website' href='#' primary={true} />
+                            <Anchor label='Portfolio Website' href='https://github.com/brianbolnick/brianbolnick' primary={true} />
                         </ListItem>
                     </List>
                 </div>
