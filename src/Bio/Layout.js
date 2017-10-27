@@ -1,15 +1,13 @@
 import React from 'react';
-// eslint-disable-next-line
 import Header from './Header.js';
-// eslint-disable-next-line
 import Footer from './Footer.js';
 
 
 const Layout = ({ children }) => (  
     <div>
-        {/* <Header /> */}
+        <Header />
             {children}
-        {/* <Footer /> */}
+        <Footer />
     </div>
 
 )

@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
-import Home from './HomePage.js';
-import NoteCards from './NoteCards.js';
+import Home from './Home/HomePage.js';
+import NoteCards from './Tools/NoteCards.js';
+// import Destiny from './Tools/Destiny.js';
 import NotFound from './NotFound.js';
 import AuthError from './AuthError.js';
+import Resume from './Bio/Resume.js';
+// import PersonalPage from './Bio/Personal.js';
+// import EducationPage from './Bio/Education.js';
+// import ProfessionalPage from './Bio/Professional.js';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { Route, withRouter, Switch } from 'react-router-dom';
 import { getQueryParams } from './utils';
@@ -63,7 +68,7 @@ class App extends Component {
           <Route path="/" exact component={HomePage}/>
           <Route path="/notecards" exact component={NoteCards}/>
           <Route path="/destiny" exact component={NoteCards}/>
-          <Route path="/resume" exact component={NoteCards}/>
+          <Route path="/resume" exact component={Resume}/>
           <Route path="/professional" exact component={NoteCards}/>
           <Route path="/education" exact component={NoteCards}/>
           <Route path="/personal" exact component={NoteCards}/>

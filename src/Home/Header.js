@@ -44,7 +44,7 @@ class HeaderContent extends Component {
                     </Menu.Item>
 
                     <Menu.Item
-                        href="//linkedin.com/brianbolnick"
+                        href="//linkedin.com/in/brianbolnick/"
                         target="_blank"
                         name="linkedin"
                     >

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import {  Header,  Icon,  Image, Modal, Button, Card, Divider } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import MenuIcon from './img/menu-icon.png';
-import './App.css';
+import MenuIcon from '../img/menu-icon.png';
+import '../App.css';
 import './Home.css';
 
 const hostname = window && window.location && window.location.hostname;

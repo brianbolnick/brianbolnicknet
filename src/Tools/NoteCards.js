@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './NoteCards.css';
 import update from 'immutability-helper';
-import { API_ROOT } from './api-config';
+import { API_ROOT } from '../api-config';
 
 class Idea extends Component {
     handleClick = () => {
