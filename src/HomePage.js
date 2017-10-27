@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Item, Container, Header, Menu, Dropdown, Icon, Table } from 'semantic-ui-react';
-import { Card, Anchor, Columns, Box, Animate, Value, Label, Paragraph, Heading, Meter, Button, List, ListItem, Select } from 'grommet';
+import { Item, Container, Header, Menu, Dropdown, Icon, Table, Image, Modal, Button } from 'semantic-ui-react';
+import { Card, Anchor, Columns, Box, Animate, Value, Label, Paragraph, Heading, Meter, List, ListItem, Select } from 'grommet';
 import Carousel from 'nuka-carousel';
 import { Link } from 'react-router-dom';
+import Typed from 'typed.js';
 // import AnnotatedMeter from 'grommet-addons/components/AnnotatedMeter';
 import BookIcon from 'grommet/components/icons/base/Book';
 import BriefcaseIcon from 'grommet/components/icons/base/Briefcase';
@@ -12,6 +13,8 @@ import ReactIcon from 'grommet/components/icons/base/PlatformReactjs';
 import RubyIcon from 'grommet/components/icons/base/Diamond';
 import Parallax from 'react-springy-parallax';
 import BG from './img/venice2.jpg';
+import Logo from './img/BB2.png';
+import MenuIcon from './img/menu-icon.png'; 
 import Layout from './Layout.js';
 import Footer from './Footer.js';
 import './Home.css';
@@ -69,6 +72,36 @@ const OverviewSlides = (props) => {
             <Personal />
         </Carousel>
     )
+}
+
+class TypedHeader extends React.Component {
+  componentDidMount() {
+    // You can pass other options here, such as typing speed, back speed, etc.
+    const options = {
+      strings: ['Husband', "Father", "Developer", "Hockey Player", "Mormon"],
+      loop: true,
+      startDelay: 2000,
+      backDelay: 1000,
+      typeSpeed: 70,
+      showCursor: true,
+      cursorChar: "|",
+      shuffle: true
+    };
+    // this.el refers to the <span> in the render() method
+    this.typed = new Typed(this.el, options);
+  }
+
+  componentWillUnmount() {
+    // Make sure to destroy Typed instance on unmounting
+    // to prevent memory leaks
+    this.typed.destroy();
+  }
+
+  render() {
+    return (
+      <span ref={(el) => { this.el = el; }} />
+    );
+  }
 }
 
 class Education extends Component {
@@ -289,7 +322,7 @@ class Second extends Component {
     }
 }
 
-class Landing extends Component {
+class LandingOld extends Component {
 
     constructor(props) {
         super(props);
@@ -397,6 +430,20 @@ class Landing extends Component {
     }
 }
 
+class Landing extends Component {
+    render() {
+        return (           
+            <div>
+                <Animate enter={{ "animation": "fade", "duration": 2000, "delay": 1500 }} keep={true}>
+                    <Image src={Logo} size='medium' onClick={this.props.clickEvent}/>
+                    <Header className="typed-header" as='h1'><TypedHeader/></Header>
+                </Animate>
+                
+            </div>
+        )
+    }
+}
+
 class LoginButton extends Component {
     isLoggedIn() {
 
@@ -450,7 +497,9 @@ class HomePage extends Component {
         return (
             <div>
 
+
                 <Parallax ref="parallax" pages={2.2}>
+               
 
                     <Parallax.Layer offset={0} speed={0} factor={2.3} style={{ backgroundImage: `url(${BG})`, backgroundSize: 'cover', backgroundPositionY: 'center' }} />
 
@@ -461,7 +510,8 @@ class HomePage extends Component {
                         speed={0.5}
                         style={styles}
                     >
-                        <Menu fixed='top' secondary className="header-nav">
+                    
+                        {/* <Menu fixed='top' secondary className="header-nav">
 
                             <Menu.Menu position='right'>
                                 <Menu.Item>
@@ -485,7 +535,28 @@ class HomePage extends Component {
                                 </Dropdown>
                                 <LoginButton />
                             </Menu.Menu>
+                        </Menu> */}
+                        <Menu fixed='top' secondary className="header-nav">
+
+                            <Menu.Menu position='left'>
+                                <Menu.Item>
+                                    {/* <Modal trigger={<Button className='menu-button'  icon='bars' />} closeIcon> */}
+                                    <Modal trigger={<Image src={MenuIcon} className='menu-button' size='mini' as='a' href="#"/>} closeIcon>
+                                        <Modal.Header>Menu</Modal.Header>
+                                        <Modal.Content image>
+                                        <Image wrapped size='medium' src={Brian} />
+                                        <Modal.Description>
+                                            <Header>Default Profile Image</Header>
+                                            <p>We've found the following gravatar image associated with your e-mail address.</p>
+                                            <p>Is it okay to use this photo?</p>
+                                        </Modal.Description>
+                                        </Modal.Content>
+                                    </Modal>
+                                </Menu.Item>
+                            </Menu.Menu>
                         </Menu>
+                         
+                    
                         <Landing token={this.props.token} clickEvent={() => this.refs.parallax.scrollTo(1.2)} />
                     </Parallax.Layer>
 
