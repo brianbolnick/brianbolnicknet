@@ -1,40 +1,22 @@
 import React, { Component } from 'react';
-import { Item, Container, Header, Menu, Dropdown, Icon, Table, Image, Modal, Button } from 'semantic-ui-react';
-import { Card, Anchor, Columns, Box, Animate, Value, Label, Paragraph, Heading, Meter, List, ListItem, Select } from 'grommet';
-import Carousel from 'nuka-carousel';
-import { Link } from 'react-router-dom';
+import { Menu, Header, Icon, Table, Image } from 'semantic-ui-react';
+import { Anchor, Columns, Box, Animate, Value, Label, Paragraph, Heading, Meter, List, ListItem } from 'grommet';
 import Typed from 'typed.js';
 // import AnnotatedMeter from 'grommet-addons/components/AnnotatedMeter';
 import BookIcon from 'grommet/components/icons/base/Book';
 import BriefcaseIcon from 'grommet/components/icons/base/Briefcase';
+import Pulse from 'grommet/components/icons/Pulse';
+import DownIcon from 'grommet/components/icons/base/Down';
 import PersonalIcon from 'grommet/components/icons/base/PersonalComputer';
-import LoginIcon from 'grommet/components/icons/base/SocialGithub';
-import ReactIcon from 'grommet/components/icons/base/PlatformReactjs';
-import RubyIcon from 'grommet/components/icons/base/Diamond';
 import Parallax from 'react-springy-parallax';
 import BG from './img/venice2.jpg';
 import Logo from './img/BB2.png';
-import MenuIcon from './img/menu-icon.png'; 
-import Layout from './Layout.js';
-import Footer from './Footer.js';
 import './Home.css';
-import Brian from './img/brian.jpg';
+import Carousel from 'nuka-carousel';
 import createReactClass from 'create-react-class';
-import * as utils from './utils';
+import NavHeader from './Header';
+import Footer from './Footer';
 
-const hostname = window && window.location && window.location.hostname;
-let clientId;
-if (hostname === 'localhost') {
-    clientId = '62c3258903ce1a2f842e';
-} else {
-    clientId = '0b5da5f8b2811097ff79';
-}
-
-const authorizeUrl = 'https://github.com/login/oauth/authorize';
-
-const scope = 'user';
-
-const jwt = JSON.parse(localStorage.getItem('jwt'));
 
 const OverviewSlides = (props) => {
     var Decorators = [{
@@ -75,33 +57,32 @@ const OverviewSlides = (props) => {
 }
 
 class TypedHeader extends React.Component {
-  componentDidMount() {
-    // You can pass other options here, such as typing speed, back speed, etc.
-    const options = {
-      strings: ['Husband', "Father", "Developer", "Hockey Player", "Mormon"],
-      loop: true,
-      startDelay: 2000,
-      backDelay: 1000,
-      typeSpeed: 70,
-      showCursor: true,
-      cursorChar: "|",
-      shuffle: true
-    };
-    // this.el refers to the <span> in the render() method
-    this.typed = new Typed(this.el, options);
-  }
+    componentDidMount() {
+        const options = {
+            strings: ['Husband', "Father", "Developer", "Hockey Player", "Mormon"],
+            loop: true,
+            startDelay: 2000,
+            backDelay: 1000,
+            typeSpeed: 70,
+            showCursor: true,
+            cursorChar: "|",
+            shuffle: true
+        };
+        // this.el refers to the <span> in the render() method
+        this.typed = new Typed(this.el, options);
+    }
 
-  componentWillUnmount() {
-    // Make sure to destroy Typed instance on unmounting
-    // to prevent memory leaks
-    this.typed.destroy();
-  }
+    componentWillUnmount() {
+        // Make sure to destroy Typed instance on unmounting
+        // to prevent memory leaks
+        this.typed.destroy();
+    }
 
-  render() {
-    return (
-      <span ref={(el) => { this.el = el; }} />
-    );
-  }
+    render() {
+        return (
+            <span ref={(el) => { this.el = el; }} />
+        );
+    }
 }
 
 class Education extends Component {
@@ -294,7 +275,7 @@ class Second extends Component {
         return (
             <div>
                 <div className="hide-on-mobile">
-                    <Animate enter={{ "animation": "fade", "duration": 2000, "delay": 1500 }} keep={true}>
+                    <Animate enter={{ "animation": "fade", "duration": 2000, "delay": 1000 }} keep={true}>
                         <Columns
                             size='medium'
                             justify='center'
@@ -306,203 +287,50 @@ class Second extends Component {
                         </Columns>
                     </Animate>
                 </div>
-                <div style={{ paddingLeft: '7%' }} className='hide-on-med-and-up' >
+                <div style={{ paddingLeft: '1%' }} className='hide-on-med-and-up' >
                     <OverviewSlides />
                 </div>
-                <Menu fixed='bottom' secondary >
-
-                    <Menu.Menu position='right'>
-                        <Menu.Item>
-                            <span style={{ paddingRight: '10px' }}>Made with </span><ReactIcon className='react-icon' /> <span style={{ paddingLeft: '10px', paddingRight: '10px' }}> and </span> <RubyIcon className='ruby-icon' /> <span style={{ paddingLeft: '10px' }}> by Brian Bolnick </span>
-                        </Menu.Item>
-                    </Menu.Menu>
-                </Menu>
+                <Footer />
             </div>
         )
     }
 }
 
-class LandingOld extends Component {
-
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            info: null
-        };
-
-    }
-    componentDidMount() {
-        this.fetchUserDetails();
-    }
-
-    fetchUserDetails() {
-        utils.fetchUserDetails({ token: this.props.token })
-            .then(info => {
-                this.setState({ info })
-            });
-    }
-    render() {
-        const {
-            info
-          } = this.state;
-
-        return (
-            <div style={{ width: '100%' }}>
-                <Columns size='large'
-                    masonry={false}
-                    maxCount={2}>
-                    <Box align='start'
-                        pad='medium'
-                        margin='small'
-                        className='home-intro-box'>
-                        <Card thumbnail={Brian}
-                            heading='Brian Bolnick'
-                            description='Husband.   Father.   Developer.   Student.   Mormon.'
-                            link={
-                                <Menu icon borderless fluid widths={3}>
-                                  <Menu.Item
-                                    href="//twitter.com/brianbolnick"
-                                    target="_blank"
-                                    name="twitter"
-                                  >
-                                    <Icon
-                                      name="twitter square"
-                                      size="large"
-                                      style={{ color: "#F5F5F5" }}
-                                    />
-                                  </Menu.Item>        
-                  
-                                  <Menu.Item
-                                    href="//github.com/brianbolnick"
-                                    target="_blank"
-                                    name="github"
-                                  >
-                                    <Icon name="github" size="large" style={{ color: "#F5F5F5" }}/>
-                                  </Menu.Item>
-                                  
-                                  <Menu.Item
-                                    href="mailto:brianbolnick+web@gmail.com"
-                                    target="_blank"
-                                    name="mail outline"
-                                  >
-                                    <Icon name="mail outline" size="large" style={{ color: "#F5F5F5" }}/>
-                                  </Menu.Item>
-                                </Menu>
-                              } 
-                        />
-                    </Box>
-                    <Box align='center'
-                        pad='medium'
-                        margin='small'
-                        className='home-intro-box'>
-                        <Header as='h2'>
-                            <Icon name='user outline' />
-                            <Header.Content>
-                            Welcome to my site!
-                            </Header.Content>
-                        </Header>
-                        <Paragraph size='medium'>
-                            My name is Brian. I am a fast-paced multi-tasker juggling many of life's missions. 
-                            As a husband to an amazing wife and father to two wild children, I strive to work as hard 
-                            as I can at whatever I am doing. My only goal is to succeed, no matter the task.
-                        </Paragraph>
-                        
-                        <Paragraph size='medium'>
-                            I built this site so you can get to know me a little better and see some of my 
-                            development skills. Some of the tools on here don't really do much but demonstrate
-                            my understanding of important software engineering concepts and workflows. 
-                        </Paragraph>
-
-                        <Paragraph size='medium'>
-                            Please feel free to explore around and learn a little more about me. 
-                            Don't hesitate to contact me with any questions! Thanks for stopping by!
-                        </Paragraph>
-                    </Box>
-                </Columns>
-                <Columns size='large'
-                    masonry={false}
-                    maxCount={2}>
-
-                </Columns>
-            </div>
-        )
-    }
-}
 
 class Landing extends Component {
     render() {
-        return (           
+        return (
             <div>
-                <Animate enter={{ "animation": "fade", "duration": 2000, "delay": 1500 }} keep={true}>
-                    <Image src={Logo} size='medium' onClick={this.props.clickEvent}/>
-                    <Header className="typed-header" as='h1'><TypedHeader/></Header>
+                <Animate enter={{ "animation": "fade", "duration": 2000, "delay": 1000 }} keep={true}>
+                    <Image src={Logo} size='medium' onClick={this.props.clickEvent} />
+                    <Header className="typed-header" as='h1'><TypedHeader /></Header>
+                    
+                    <Menu fluid widths={1} fixed='bottom' secondary >
+                        <Menu.Menu>
+                            <Menu.Item>
+                                <Pulse icon={<DownIcon />} onClick={this.props.clickEvent} />
+                            </Menu.Item>
+                        </Menu.Menu>
+                    </Menu>
                 </Animate>
-                
             </div>
         )
     }
 }
 
-class LoginButton extends Component {
-    isLoggedIn() {
-
-        if ((jwt != null) && ((jwt.exp * 1000) >= Date.now())) {
-            return true;
-        }
-        return false;
-    }
-
-    render() {
-        return (
-            <Menu.Item>
-                {this.isLoggedIn()
-                    ?
-                    <Button
-                        label={jwt.name}
-                        href="#"
-                        secondary={true}
-                        accent={true}
-                        critical={false}
-                        plain={false}
-                        style={{ color: '#f5f5f5', fontSize: '1rem', fontWeight: '400' }} />
-                    :
-
-                    <Button icon={<LoginIcon size='xsmall' />}
-                        label='Login'
-                        href={`${authorizeUrl}?client_id=${clientId}&scope=${scope}`}
-                        secondary={true}
-                        accent={true}
-                        critical={false}
-                        plain={false}
-                        style={{ color: '#f5f5f5', fontSize: '1rem', fontWeight: '400' }} />
-                }
-
-            </Menu.Item>
-        )
-    }
-}
 
 class HomePage extends Component {
 
 
     render() {
         const styles = {
-            // fontFamily: 'Menlo-Regular, Menlo, monospace',
-            // fontSize: 14,
-            // lineHeight: '10px',
             color: 'white',
             display: 'flex', alignItems: 'center', justifyContent: 'center'
         }
         return (
             <div>
-
-
                 <Parallax ref="parallax" pages={2.2}>
-               
-
                     <Parallax.Layer offset={0} speed={0} factor={2.3} style={{ backgroundImage: `url(${BG})`, backgroundSize: 'cover', backgroundPositionY: 'center' }} />
-
                     <Parallax.Layer offset={3} speed={1} style={{ backgroundColor: '#87BCDE' }} />
 
                     <Parallax.Layer
@@ -510,53 +338,7 @@ class HomePage extends Component {
                         speed={0.5}
                         style={styles}
                     >
-                    
-                        {/* <Menu fixed='top' secondary className="header-nav">
-
-                            <Menu.Menu position='right'>
-                                <Menu.Item>
-                                    <Button
-                                        label='Resume'
-                                        href="#"
-                                        secondary={true}
-                                        accent={true}
-                                        critical={false}
-                                        plain={false}
-                                        style={{ color: '#f5f5f5', fontSize: '1rem', fontWeight: '400' }} />
-                                </Menu.Item>
-                                <Dropdown item text='API Tools' >
-                                    <Dropdown.Menu>
-                                        <Dropdown.Header icon='configure' content='Tools and Resources' />
-                                        <Dropdown.Divider />
-                                        <Dropdown.Item>Destiny</Dropdown.Item>
-                                        <Dropdown.Item>Twitter</Dropdown.Item>
-                                        <Dropdown.Item as={Link} to='/api_tool' >Note Cards</Dropdown.Item>
-                                    </Dropdown.Menu>
-                                </Dropdown>
-                                <LoginButton />
-                            </Menu.Menu>
-                        </Menu> */}
-                        <Menu fixed='top' secondary className="header-nav">
-
-                            <Menu.Menu position='left'>
-                                <Menu.Item>
-                                    {/* <Modal trigger={<Button className='menu-button'  icon='bars' />} closeIcon> */}
-                                    <Modal trigger={<Image src={MenuIcon} className='menu-button' size='mini' as='a' href="#"/>} closeIcon>
-                                        <Modal.Header>Menu</Modal.Header>
-                                        <Modal.Content image>
-                                        <Image wrapped size='medium' src={Brian} />
-                                        <Modal.Description>
-                                            <Header>Default Profile Image</Header>
-                                            <p>We've found the following gravatar image associated with your e-mail address.</p>
-                                            <p>Is it okay to use this photo?</p>
-                                        </Modal.Description>
-                                        </Modal.Content>
-                                    </Modal>
-                                </Menu.Item>
-                            </Menu.Menu>
-                        </Menu>
-                         
-                    
+                        <NavHeader />
                         <Landing token={this.props.token} clickEvent={() => this.refs.parallax.scrollTo(1.2)} />
                     </Parallax.Layer>
 
@@ -564,9 +346,7 @@ class HomePage extends Component {
                         offset={1.2}
                         speed={-0.1}
                     >
-                        {/* <div style={{marginBottom: '4%'}} /> */}
                         <Second clickEvent={() => this.refs.parallax.scrollTo(0)} />
-
                     </Parallax.Layer>
                 </Parallax>
             </div>

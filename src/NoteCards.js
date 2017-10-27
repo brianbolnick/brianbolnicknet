@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import axios from 'axios';
-import './ApiTool.css';
+import './NoteCards.css';
 import update from 'immutability-helper';
 import { API_ROOT } from './api-config';
 
