@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './NoteCards.css';
+import Layout from './Layout';
+import './Tools.css';
+import { Header, Divider } from 'semantic-ui-react';
 import update from 'immutability-helper';
 import { API_ROOT } from '../api-config';
 
@@ -179,12 +182,15 @@ class ApiPage extends Component {
 
     render() {
         return (
-            <div className="App">
-                <div className="App-header">
-                    <h1>Idea Board</h1>
+            <Layout>          
+                <div style={{ textAlign: 'center', marginTop: '8%' }}>     
+                    <Header as='h1' > Note Card Application </Header> 
+                    <span> This is an application that interfaces with my backend Rails API. It 
+                        allows you to create, update, and delete notes. </span>
+                        <Divider />
+                    <IdeasContainer />
                 </div>
-                <IdeasContainer />
-            </div>
+            </Layout>
         )
     }
 }

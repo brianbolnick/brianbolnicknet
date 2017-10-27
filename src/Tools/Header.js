@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 import { Menu } from 'semantic-ui-react';
-import './Bio.css';
+import './Tools.css';
 import MenuModal from './MenuModal';
 
 
 class HeaderContent extends Component {
     render() {
         return (
-            <Menu fixed='top' secondary className="bio-nav" style={{ backgroundColor: '#212121' }}>
-
+            <Menu fixed='top' secondary className="tool-nav" style={{ backgroundColor: '#212121' }}>
                 <Menu.Menu position='left'>
                     <Menu.Item>
                         <MenuModal />
