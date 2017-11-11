@@ -6,16 +6,22 @@ import '../App.css';
 import './Home.css';
 
 const hostname = window && window.location && window.location.hostname;
-let clientId;
+let githubClientId;
+let bungieClientId;
 if (hostname === 'localhost') {
-    clientId = '62c3258903ce1a2f842e';
+    githubClientId = '62c3258903ce1a2f842e';
+    bungieClientId = '22576';
 } else {
-    clientId = '0b5da5f8b2811097ff79';
+    githubClientId = '0b5da5f8b2811097ff79';
+    bungieClientId = '';
 }
 
-const authorizeUrl = 'https://github.com/login/oauth/authorize';
-const scope = 'user';
+const githubAuthorizeUrl = 'https://github.com/login/oauth/authorize';
+const bungieAuthorizeUrl = 'https://www.bungie.net/en/OAuth/Authorize';
+const githubScope = 'user';
 const jwt = JSON.parse(localStorage.getItem('jwt'));
+
+const name = jwt.name == null ? jwt.display_name : jwt.name;
 
 class LoginButtons extends Component {
     isLoggedIn() {
@@ -32,7 +38,7 @@ class LoginButtons extends Component {
                     ?
                     <div style={{textAlign: 'center'}}>
                         <Header as='h4' style={{color: '#f5f5f5' }}>
-                            Welcome, {jwt.name}!
+                            Welcome, {name}!
                             <Header.Subheader style={{color: '#f5f5f5' }}>
                             Thanks for logging in! Don't worry, I don't have any info on you other than your name.
                             </Header.Subheader>
@@ -50,9 +56,9 @@ class LoginButtons extends Component {
                         </Header.Subheader>
                     </Header>
                     <Button.Group>
-                        <Button as='a' href={`${authorizeUrl}?client_id=${clientId}&scope=${scope}`} basic inverted color='blue'><Icon name='github' />Github</Button>
+                        <Button as='a' href={`${githubAuthorizeUrl}?client_id=${githubClientId}&scope=${githubScope}`} basic inverted color='blue'><Icon name='github' />Github</Button>
                         <Button.Or />
-                        <Button basic inverted color='green'><Icon name='key' />Bungie</Button>
+                        <Button as='a' href={`${bungieAuthorizeUrl}?client_id=${bungieClientId}&response_type=code&state=8fj30dajadj`}  basic inverted color='green'><Icon name='key' />Bungie</Button>
                     </Button.Group>
                 </div>
 
