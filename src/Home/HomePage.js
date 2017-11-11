@@ -58,7 +58,11 @@ const OverviewSlides = (props) => {
 class TypedHeader extends React.Component {
     componentDidMount() {
         const options = {
-            strings: ['Husband', "Father", "Developer", "Hockey Player", "Mormon"],
+            strings: [
+                'Husband', "Father", "Developer", 
+                "Hockey Player", "Mormon", "Snowboarder", 
+                "Italian Speaker", "Chef", "Apple Enthusiast"
+            ],
             loop: true,
             startDelay: 2000,
             backDelay: 1000,
