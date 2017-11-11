@@ -13,7 +13,7 @@ if (hostname === 'localhost') {
     bungieClientId = '22576';
 } else {
     githubClientId = '0b5da5f8b2811097ff79';
-    bungieClientId = '';
+    bungieClientId = '22602';
 }
 
 const githubAuthorizeUrl = 'https://github.com/login/oauth/authorize';
