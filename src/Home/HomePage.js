@@ -15,6 +15,9 @@ import Carousel from 'nuka-carousel';
 import createReactClass from 'create-react-class';
 import NavHeader from './Header';
 import Footer from './Footer';
+import { push } from 'react-router-redux';
+import { bindActionReducers } from 'redux';
+import {connect} from 'react-redux';
 
 
 const OverviewSlides = (props) => {
