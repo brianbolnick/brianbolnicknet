@@ -21,7 +21,11 @@ const bungieAuthorizeUrl = 'https://www.bungie.net/en/OAuth/Authorize';
 const githubScope = 'user';
 const jwt = JSON.parse(localStorage.getItem('jwt'));
 
-const name = jwt.name == null ? jwt.display_name : jwt.name;
+let name;
+if (jwt != null) {
+    name = jwt.name == null ? jwt.display_name : jwt.name;
+} 
+
 
 class LoginButtons extends Component {
     isLoggedIn() {
