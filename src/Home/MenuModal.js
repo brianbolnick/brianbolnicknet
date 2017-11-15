@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import MenuIcon from '../img/menu-icon.png';
 import '../App.css';
 import './Home.css';
+import { API_ROOT } from '../api-config';
 
 const hostname = window && window.location && window.location.hostname;
 let githubClientId;
@@ -62,7 +63,8 @@ class LoginButtons extends Component {
                     <Button.Group>
                         <Button as='a' href={`${githubAuthorizeUrl}?client_id=${githubClientId}&scope=${githubScope}`} basic inverted color='blue'><Icon name='github' />Github</Button>
                         <Button.Or />
-                        <Button as='a' href={`${bungieAuthorizeUrl}?client_id=${bungieClientId}&response_type=code&state=8fj30dajadj`}  basic inverted color='green'><Icon name='key' />Bungie</Button>
+                        {/* <Button as='a' href={`${bungieAuthorizeUrl}?client_id=${bungieClientId}&response_type=code&state=8fj30dajadj`}  basic inverted color='green'><Icon name='key' />Bungie</Button> */}
+                        <Button as='a' href={`${API_ROOT}/login`}  basic inverted color='green'><Icon name='key' />Bungie</Button>
                     </Button.Group>
                 </div>
 

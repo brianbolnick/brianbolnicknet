@@ -7,6 +7,9 @@ import { Header, Divider } from 'semantic-ui-react';
 import update from 'immutability-helper';
 import { API_ROOT } from '../api-config';
 
+const config = { headers: {'AUTHORIZATION': `Bearer ${localStorage.getItem('auth_token')}` }}
+
+
 class Idea extends Component {
     handleClick = () => {
         this.props.onClick(this.props.idea.id)
@@ -56,7 +59,8 @@ class IdeaForm extends Component {
             `${API_ROOT}/api/v1/ideas/${this.props.idea.id}`,
             {
                 idea: idea
-            })
+            },
+            config)
             .then(response => {
                 console.log(response)
                 this.props.updateIdea(response.data)
@@ -96,7 +100,7 @@ class IdeasContainer extends Component {
     }
 
     componentDidMount() {
-        axios.get(`${API_ROOT}/api/v1/ideas.json`)
+        axios.get(`${API_ROOT}/api/v1/ideas.json`, config)
             .then(response => {
                 console.log(response)
                 this.setState({ ideas: response.data })
@@ -113,7 +117,8 @@ class IdeasContainer extends Component {
                     title: '',
                     body: ''
                 }
-            }
+            }, 
+            config
         )
             .then(response => {
                 const ideas = update(this.state.ideas, {
@@ -147,7 +152,7 @@ class IdeasContainer extends Component {
 
 
     deleteIdea = (id) => {
-        axios.delete(`${API_ROOT}/api/v1/ideas/${id}`)
+        axios.delete(`${API_ROOT}/api/v1/ideas/${id}`, config)
             .then(response => {
                 const ideaIndex = this.state.ideas.findIndex(x => x.id === id)
                 const ideas = update(this.state.ideas, { $splice: [[ideaIndex, 1]] })
@@ -179,8 +184,10 @@ class IdeasContainer extends Component {
 }
 
 class ApiPage extends Component {
-
+    
     render() {
+        console.log("state:");
+        console.log( this.state);
         return (
             <Layout>          
                 <div style={{ textAlign: 'center', marginTop: '8%' }}>     

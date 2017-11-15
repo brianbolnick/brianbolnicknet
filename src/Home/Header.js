@@ -20,7 +20,7 @@ class HeaderContent extends Component {
                     icon
                     borderless
                     compact
-                    style={{ backgroundColor: 'transparent', marginRight: '10px' }}
+                    style={{ backgroundColor: 'transparent', marginRight: '10px', border: 'none', boxShadow: 'none' }}
                 >
 
                     <Menu.Item

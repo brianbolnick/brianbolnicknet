@@ -56,7 +56,36 @@ class HomePage extends Component {
 }
 
 class App extends Component {
+  constructor() {
+    super();
 
+    const params = getQueryParams();
+    // console.log(params);
+    if (params.token != null) {
+      const jwt = jwtDecode(params.token);
+      // console.log(jwt);
+
+      this.state = { 
+        token: params.token,
+        login: jwt.login,
+        avatar: jwt.avatar_url,
+        name: jwt.name,
+        display_name: jwt.display_name
+      };
+      
+      // console.log(jwt);
+      localStorage.setItem('auth_token', params.token);
+      localStorage.setItem('jwt', JSON.stringify(jwt));
+    } else {
+      this.state = { 
+        token: params.token
+      };
+    }
+  }
+
+  isLoggedIn() {
+    return !!this.state.token;
+  }
   render () {
     const currentKey = this.props.location.pathname.split('/')[1] || '/';
     const timeout = { enter: 300, exit: 200 };
@@ -65,14 +94,14 @@ class App extends Component {
       <TransitionGroup component="main" className="page-main">
       <CSSTransition key={currentKey} timeout={timeout} classNames="fade" appear>
         <Switch location={this.props.location}>
-          <Route path="/" exact component={HomePage}/>
-          <Route path="/notecards" exact component={NoteCards}/>
-          <Route path="/destiny" exact component={NoteCards}/>
-          <Route path="/resume" exact component={Resume}/>
-          <Route path="/professional" exact component={NoteCards}/>
-          <Route path="/education" exact component={NoteCards}/>
-          <Route path="/personal" exact component={NoteCards}/>
-          <Route path="/auth_error" exact component={AuthError}/>
+          <Route path="/" exact component={Home} token={this.state.token} />
+          <Route path="/notecards" exact component={NoteCards} token={this.state.token} />
+          <Route path="/destiny" exact component={NoteCards} token={this.state.token} />
+          <Route path="/resume" exact component={Resume}  />
+          <Route path="/professional" exact component={NoteCards} />
+          <Route path="/education" exact component={NoteCards} />
+          <Route path="/personal" exact component={NoteCards} />
+          <Route path="/auth_error" exact component={AuthError}  />
           <Route component={NotFound} />
         </Switch>
       </CSSTransition>
