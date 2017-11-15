@@ -186,8 +186,6 @@ class IdeasContainer extends Component {
 class ApiPage extends Component {
     
     render() {
-        console.log("state:");
-        console.log( this.state);
         return (
             <Layout>          
                 <div style={{ textAlign: 'center', marginTop: '8%' }}>     
