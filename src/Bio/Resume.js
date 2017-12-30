@@ -9,7 +9,7 @@ class MyPdfViewer extends React.Component {
             <Layout>                
                 <div style={{textAlign: 'center', marginTop: '6.5%' }}>                
                     <Iframe 
-                    url="https://s3-us-west-2.amazonaws.com/brianbolnicknet/BrianJBolnick2017.pdf" 
+                    url="https://s3-us-west-2.amazonaws.com/brianbolnicknet/resume.pdf" 
                     display="initial"
                     position="relative"
                     allowFullScreen
