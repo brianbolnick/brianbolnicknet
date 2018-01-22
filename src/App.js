@@ -6,6 +6,7 @@ import NoteCards from './Tools/NoteCards.js';
 import NotFound from './NotFound.js';
 import AuthError from './AuthError.js';
 import Resume from './Bio/Resume.js';
+import Grades from './Bio/Grades.js';
 // import PersonalPage from './Bio/Personal.js';
 // import EducationPage from './Bio/Education.js';
 // import ProfessionalPage from './Bio/Professional.js';
@@ -101,6 +102,7 @@ class App extends Component {
           <Route path="/professional" exact component={NoteCards} />
           <Route path="/education" exact component={NoteCards} />
           <Route path="/personal" exact component={NoteCards} />
+          <Route path="/canvas_grades" exact component={Grades} />
           <Route path="/auth_error" exact component={AuthError}  />
           <Route component={NotFound} />
         </Switch>
