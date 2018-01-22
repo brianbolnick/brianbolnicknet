@@ -3,6 +3,7 @@ import Iframe from 'react-iframe'
 import Layout from './Layout';
 import { fetchGrades } from '../actions/grades_index';
 import { connect } from 'react-redux'
+import { API_ROOT } from '../api-config';
 
 class Grades extends React.Component {
 
@@ -13,7 +14,7 @@ class Grades extends React.Component {
     render() {
         const links = this.props.grades.map((data) => {
             return (
-                <li key={data.id}> <a href={data.url}>{data.created_at}</a> </li>
+                <li key={data.id}> <a href={`${API_ROOT}/api/v1/grades/${data.id}/download`}>{data.date}</a> </li>
             )
         })
         return (!this.props.fething ?
@@ -25,7 +26,6 @@ class Grades extends React.Component {
                     </ul>
                 </div>
             </Layout>
-
             :
             <Layout>
                 <div style={{ marginTop: '6.5%' }}>
