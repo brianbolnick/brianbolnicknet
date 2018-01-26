@@ -8,7 +8,7 @@ import Resume from './Bio/Resume.js';
 import Grades from './Bio/Grades.js';
 import Destinder from './Showcase/Destinder.js';
 import SellOut from './Showcase/SellOut.js';
-import Icpm from './Showcase/SellOut.js';
+import Icpm from './Showcase/Icpm.js';
 import About from './Home/About.js';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { Route, withRouter, Switch } from 'react-router-dom';
