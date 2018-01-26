@@ -1,9 +1,10 @@
 {
   "name": "brianbolnick",
   "version": "0.1.0",
-  "homepage" : "http://brianbolnick.com",
+  "homepage": "http://brianbolnick.com",
   "private": true,
   "dependencies": {
+    "antd": "^3.1.4",
     "axios": "^0.16.2",
     "chartist": "^0.11.0",
     "dotenv": "^4.0.0",

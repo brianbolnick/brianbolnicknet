@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Menu, Header, Icon, Table, Image } from 'semantic-ui-react';
+import { Menu, Header, Icon, Table, Image, Divider, Grid } from 'semantic-ui-react';
 import { Anchor, Columns, Box, Animate, Value, Label, Paragraph, Heading, Meter, List, ListItem } from 'grommet';
 import Typed from 'typed.js';
 import BookIcon from 'grommet/components/icons/base/Book';
@@ -11,59 +11,26 @@ import Parallax from 'react-springy-parallax';
 import BG from '../img/venice2.jpg';
 import Logo from '../img/BB2.png';
 import './Home.css';
-import Carousel from 'nuka-carousel';
+// import Carousel from 'nuka-carousel';
 import createReactClass from 'create-react-class';
 import NavHeader from './Header';
 import Footer from './Footer';
 import { push } from 'react-router-redux';
 import { bindActionReducers } from 'redux';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
+import DestinderHome from '../img/destinder-home.png'
+import DestinderLfg from '../img/destinder-lfg.png'
+import SellOutHome from '../img/sellout-home.png'
+import SellOutListings from '../img/sellout-listings.png'
+import IcpmHome from '../img/icpm-home.png'
 
-
-const OverviewSlides = (props) => {
-    var Decorators = [{
-        component: createReactClass({
-            render() {
-                return (
-                    <Icon link name='angle left' inverted color='grey' size='big' onClick={this.props.previousSlide} />
-                )
-            }
-        }),
-        position: 'BottomLeft',
-        style: {
-            padding: 20
-        }
-    },
-    {
-        component: createReactClass({
-            render() {
-                return (
-                    <Icon link name='angle right' inverted color='grey' size='big' onClick={this.props.nextSlide} />
-                )
-            }
-        }),
-        position: 'BottomRight',
-        style: {
-            padding: 20
-        }
-    }
-
-    ];
-    return (
-        <Carousel wrapAround={true} decorators={Decorators}>
-            <Professional />
-            <Education />
-            <Personal />
-        </Carousel>
-    )
-}
 
 class TypedHeader extends React.Component {
     componentDidMount() {
         const options = {
             strings: [
-                'Husband', "Father", "Developer", 
-                "Hockey Player", "Mormon", "Snowboarder", 
+                'Husband', "Father", "Developer",
+                "Hockey Player", "Mormon", "Snowboarder",
                 "Italian Speaker", "Chef", "Apple Enthusiast"
             ],
             loop: true,
@@ -247,7 +214,7 @@ class Personal extends Component {
                     <List>
                         <ListItem justify='between' >
                             <Anchor label='Destinder (Full Rails)' href='http://destinder.com' primary={true} />
-                        </ListItem> 
+                        </ListItem>
                         <ListItem justify='between' >
                             <Anchor label='Destinder (React/Rails)' href='https://destinder-client-beta.herokuapp.com/' primary={true} />
                         </ListItem>
@@ -279,24 +246,48 @@ class Second extends Component {
 
 
         return (
-            <div>
-                <div className="hide-on-mobile">
-                    <Animate enter={{ "animation": "fade", "duration": 2000, "delay": 1000 }} keep={true}>
-                        <Columns
-                            size='medium'
-                            justify='center'
-                            masonry={true}
-                            maxCount={3}>
-                            <Professional />
-                            <Education />
-                            <Personal />
-                        </Columns>
-                    </Animate>
+            <div className="showcase-container">
+                <div style={{ textAlign: 'center' }}>
+                    <Header as='h1' className="portfolio-header" >Portfolio</Header>
                 </div>
-                <div style={{ paddingLeft: '1%' }} className='hide-on-med-and-up' >
-                    <OverviewSlides />
-                </div>
-                <Footer />
+                <Grid doubling columns={2} className="showcase-grid">
+                    <Grid.Column>
+                        <div className="showcase-item">
+                            <figure className="showcase-figure">
+                            <img src={DestinderHome} width='100%'/>
+                                <figcaption>
+                                    <h3>Destinder</h3>
+                                    <h4>Looking For Group and Stat Tracker for Destiny the Game</h4>
+                                </figcaption>
+                                <a href="https://destinder.com/"></a>
+                            </figure>
+                        </div>
+                    </Grid.Column>
+                    <Grid.Column>
+                        <div className="showcase-item">
+                        <figure className="showcase-figure">
+                            <img src={SellOutHome} width='100%'/>
+                                <figcaption>
+                                    <h3>SellOut</h3>
+                                    <h4>Classifieds App for College Students</h4>
+                                </figcaption>
+                                <a href="https://young-eyrie-43253.herokuapp.com/"></a>
+                            </figure>
+                        </div>
+                    </Grid.Column>                    
+                    <Grid.Column>
+                        <div className="showcase-item">
+                        <figure className="showcase-figure">
+                            <img src={IcpmHome} width='100%'/>
+                                <figcaption>
+                                    <h3>IC PM Tool</h3>
+                                    <h4>Project Management Tool for Canvas IC's</h4>
+                                </figcaption>
+                                <a href="https://icpm.herokuapp.com/"></a>
+                            </figure>
+                        </div>
+                    </Grid.Column>                    
+                </Grid>
             </div>
         )
     }
@@ -310,7 +301,7 @@ class Landing extends Component {
                 <Animate enter={{ "animation": "fade", "duration": 2000, "delay": 1000 }} keep={true}>
                     <Image src={Logo} size='medium' onClick={this.props.clickEvent} />
                     <Header className="typed-header" as='h1'><TypedHeader /></Header>
-                    
+
                     <Menu fluid widths={1} fixed='bottom' secondary >
                         <Menu.Menu>
                             <Menu.Item>
