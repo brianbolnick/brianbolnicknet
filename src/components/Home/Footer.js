@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Menu, Icon } from 'semantic-ui-react';
-import './Home.css';
+import '../../css/Home.css';
 import ReactIcon from 'grommet/components/icons/base/PlatformReactjs';
 import RubyIcon from 'grommet/components/icons/base/Diamond';
 import { Anchor } from 'grommet';

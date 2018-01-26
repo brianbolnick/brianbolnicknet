@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Menu } from 'semantic-ui-react';
-import './Tools.css';
-import MenuModal from './MenuModal';
+import '../../css/Tools.css';
+import MenuModal from '../Home/MenuModal';
 
 
 class HeaderContent extends Component {

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './NoteCards.css';
+import '../../css/NoteCards.css';
 import Layout from './Layout';
-import './Tools.css';
+import '../../css/Tools.css';
 import { Header, Divider } from 'semantic-ui-react';
 import update from 'immutability-helper';
-import { API_ROOT } from '../api-config';
+import { API_ROOT } from '../../api-config';
 
 const config = { headers: {'AUTHORIZATION': `Bearer ${localStorage.getItem('auth_token')}` }}
 

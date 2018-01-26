@@ -1,9 +1,8 @@
 import React from 'react';
-import Iframe from 'react-iframe'
 import Layout from './Layout';
-import { fetchGrades } from '../actions/grades_index';
+import { fetchGrades } from '../../actions/grades_index';
 import { connect } from 'react-redux'
-import { API_ROOT } from '../api-config';
+import { API_ROOT } from '../../api-config';
 
 class Grades extends React.Component {
 

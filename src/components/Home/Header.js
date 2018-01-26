@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Menu,  Icon } from 'semantic-ui-react';
-import './Home.css';
+import { Menu, Icon } from 'semantic-ui-react';
+import '../../css/Home.css';
 import MenuModal from './MenuModal';
 
 
@@ -22,6 +22,14 @@ class HeaderContent extends Component {
                     compact
                     style={{ backgroundColor: 'transparent', marginRight: '10px', border: 'none', boxShadow: 'none' }}
                 >
+
+                    <Menu.Item
+                        href="//dribbble.com/brianbolnick"
+                        target="_blank"
+                        name="dribble"
+                    >
+                        <Icon name="dribble" size="large" style={{ color: "#F5F5F5" }} />
+                    </Menu.Item>
 
                     <Menu.Item
                         href="//twitter.com/brianbolnick"

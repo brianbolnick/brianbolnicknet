@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Menu } from 'semantic-ui-react';
-import './Bio.css';
+import '../../css/Bio.css';
 
 
 
