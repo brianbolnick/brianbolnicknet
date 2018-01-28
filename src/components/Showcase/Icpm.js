@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Layout from './Layout'
 import { Image, Modal, Divider, Grid } from 'semantic-ui-react';
 import Home from '../../img/showcase-icpm-home.png'
+import HomeFull from '../../img/icpm-home.png'
 
 
 class Icpm extends Component {
@@ -50,7 +51,7 @@ class Icpm extends Component {
                             <Grid.Row>
                                 <Grid.Column computer={8}>
                                     <Modal closeIcon trigger={<Image src={Home} fluid className="main-showcase-img" />}>
-                                        <Image src={Home} fluid className="main-showcase-img" />
+                                        <Image src={HomeFull} fluid />
                                     </Modal>
 
                                 </Grid.Column>                            

@@ -5,6 +5,10 @@ import Home from '../../img/showcase-destinder-home.png'
 import Ft1 from '../../img/showcase-destinder-ft1.png'
 import Lfg from '../../img/showcase-destinder-lfg.png'
 import Profile from '../../img/showcase-destinder-profile.png'
+import HomeFull from '../../img/destinder-home.png'
+import Ft1Full from '../../img/destinder-ft-1.png'
+import LfgFull from '../../img/destinder-lfg.png'
+import ProfileFull from '../../img/destinder-profile.png'
 
 
 class Destinder extends Component {
@@ -53,23 +57,23 @@ class Destinder extends Component {
                             <Grid.Row>
                                 <Grid.Column computer={8}>
                                     <Modal closeIcon trigger={<Image src={Home} fluid className="main-showcase-img" />}>
-                                        <Image src={Home} fluid className="main-showcase-img" />
+                                        <Image src={HomeFull} fluid  />
                                     </Modal>
 
                                 </Grid.Column>
                                 <Grid.Column computer={8}>
                                     <Modal closeIcon trigger={<Image src={Ft1} fluid className="main-showcase-img" />}>
-                                        <Image src={Ft1} fluid className="main-showcase-img" />
+                                        <Image src={Ft1Full} fluid  />
                                     </Modal>
                                 </Grid.Column>
                                 <Grid.Column computer={8}>
                                     <Modal closeIcon trigger={<Image src={Lfg} fluid className="main-showcase-img" />}>
-                                        <Image src={Lfg} fluid className="main-showcase-img" />
+                                        <Image src={LfgFull} fluid  />
                                     </Modal>
                                 </Grid.Column>
                                 <Grid.Column computer={8}>
                                     <Modal closeIcon trigger={<Image src={Profile} fluid className="main-showcase-img" />}>
-                                        <Image src={Profile} fluid className="main-showcase-img" />
+                                        <Image src={ProfileFull} fluid />
                                     </Modal>
                                 </Grid.Column>
                             </Grid.Row>

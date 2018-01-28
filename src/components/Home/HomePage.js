@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Menu, Header, Image, Grid } from 'semantic-ui-react';
+import { Menu, Header, Image, Grid, Table } from 'semantic-ui-react';
 import { Animate } from 'grommet';
 import { Link } from 'react-router-dom';
-
 import Typed from 'typed.js';
 import Pulse from 'grommet/components/icons/Pulse';
 import DownIcon from 'grommet/components/icons/base/Down';
@@ -81,7 +80,7 @@ class Second extends Component {
                                     <h3>SellOut</h3>
                                     <h4>Classifieds App for College Students</h4>
                                 </figcaption>
-                                <a href="https://young-eyrie-43253.herokuapp.com/" rel="noopener noreferrer" target='_blank'> </a>
+                                <Link to='/sellout' />
                             </figure>
                         </div>
                     </Grid.Column>
@@ -93,12 +92,11 @@ class Second extends Component {
                                     <h3>IC PM Tool</h3>
                                     <h4>Project Management Tool for Canvas IC's</h4>
                                 </figcaption>
-                                <a href="https://icpm.herokuapp.com/" rel="noopener noreferrer" target='_blank'> </a>
+                                <Link to='/icpm' />
                             </figure>
                         </div>
                     </Grid.Column>
                 </Grid>
-                <Footer />
             </div>
         )
     }
@@ -125,6 +123,66 @@ class Landing extends Component {
     }
 }
 
+class Third extends Component {
+    render() {
+        return (
+            <div className="table-container">
+                <Table basic='very' celled collapsing>
+                    <Table.Header>
+                        <Table.Row>
+                            <Table.HeaderCell>Project</Table.HeaderCell>
+                            <Table.HeaderCell>Front</Table.HeaderCell>
+                            <Table.HeaderCell>Back</Table.HeaderCell>
+                            <Table.HeaderCell>Description</Table.HeaderCell>
+                        </Table.Row>
+                    </Table.Header>
+
+                    <Table.Body>
+                        <Table.Row>
+                            <Table.Cell>
+                                <Header as='h4' image>
+                                    <Header.Content>
+                                        Bulk Content Migration Station
+                                <Header.Subheader>Instructure - Content Migration Specialist</Header.Subheader>
+                                    </Header.Content>
+                                </Header>
+                            </Table.Cell>
+                            <Table.Cell>
+                                Rails
+                        </Table.Cell>
+                            <Table.Cell>
+                                Rails
+                        </Table.Cell>
+                            <Table.Cell>
+                                An internal tool to help the automation and reporting process of bulk migrating LMS content to Canvas
+                        </Table.Cell>
+                        </Table.Row>
+                        <Table.Row>
+                            <Table.Cell>
+                                <Header as='h4' image>
+                                    <Header.Content>
+                                        Canvas Admin Scripts
+                                <Header.Subheader>Instructure - Implementation Project Manager</Header.Subheader>
+                                    </Header.Content>
+                                </Header>
+                            </Table.Cell>
+                            <Table.Cell>
+                                Ruby
+                        </Table.Cell>
+                            <Table.Cell>
+                                Ruby
+                        </Table.Cell>
+                            <Table.Cell>
+                                A variety of scripts custom built to assist in the automation of many processes for Higher-Ed schools.
+                        </Table.Cell>
+                        </Table.Row>
+                    </Table.Body>
+                </Table>
+            </div>
+        )
+    }
+}
+
 class HomePage extends Component {
     render() {
         const styles = {
@@ -133,8 +191,8 @@ class HomePage extends Component {
         }
         return (
             <div>
-                <Parallax ref="parallax" pages={2.2}>
-                    <Parallax.Layer offset={0} speed={0} factor={2.3} style={{ backgroundImage: `url(${BG})`, backgroundSize: 'cover', backgroundPositionY: 'center' }} />
+                <Parallax ref="parallax" pages={3.2}>
+                    <Parallax.Layer offset={0} speed={0} factor={3.3} style={{ backgroundImage: `url(${BG})`, backgroundSize: 'cover', backgroundPositionY: 'center' }} />
                     <Parallax.Layer offset={3} speed={1} style={{ backgroundColor: '#87BCDE' }} />
 
                     <Parallax.Layer
@@ -150,7 +208,15 @@ class HomePage extends Component {
                         offset={1.2}
                         speed={-0.1}
                     >
-                        <Second clickEvent={() => this.refs.parallax.scrollTo(0)} />
+                        <Second clickEvent={() => this.refs.parallax.scrollTo(2.2)} />
+                    </Parallax.Layer>
+
+                    <Parallax.Layer
+                        offset={2.2}
+                        speed={-0.1}
+                    >
+                        {/* <Third clickEvent={() => this.refs.parallax.scrollTo(0)} /> */}
+                        <Footer />
                     </Parallax.Layer>
                 </Parallax>
             </div>
