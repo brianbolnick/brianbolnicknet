@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import Layout from '../Showcase/Layout'
-import { Image, Modal, Divider, Grid } from 'semantic-ui-react';
-
-
+import { Divider } from 'semantic-ui-react';
 
 class About extends Component {
     render() {

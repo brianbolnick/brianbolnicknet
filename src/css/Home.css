@@ -162,7 +162,7 @@ a.ui.mini.image.showcase-menu-button:hover {
 }
 
 h1.ui.header.typed-header {
-    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Montserrat', sans-serif; */
     position: relative;
     bottom: 65px;
     color: #f5f5f5;

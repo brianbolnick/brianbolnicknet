@@ -11,9 +11,9 @@ import Logo from '../../img/BB2.png';
 import '../../css/Home.css';
 import NavHeader from './Header';
 import Footer from './Footer';
-import DestinderHome from '../../img/destinder-home.png'
-import SellOutHome from '../../img/sellout-home.png'
-import IcpmHome from '../../img/icpm-home.png'
+import DestinderHome from '../../img/destinder-home-op.jpg'
+import SellOutHome from '../../img/sellout-home-op.jpg'
+import IcpmHome from '../../img/icpm-home-op.jpg'
 
 
 class TypedHeader extends React.Component {
@@ -27,7 +27,7 @@ class TypedHeader extends React.Component {
             loop: true,
             startDelay: 2000,
             backDelay: 1000,
-            typeSpeed: 70,
+            typeSpeed: 80,
             showCursor: true,
             cursorChar: "|",
             shuffle: true
@@ -123,6 +123,7 @@ class Landing extends Component {
     }
 }
 
+// eslint-disable-next-line
 class Third extends Component {
     render() {
         return (

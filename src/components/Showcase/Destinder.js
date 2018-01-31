@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import Layout from './Layout'
 import { Image, Modal, Divider, Grid } from 'semantic-ui-react';
-import Home from '../../img/showcase-destinder-home.png'
-import Ft1 from '../../img/showcase-destinder-ft1.png'
-import Lfg from '../../img/showcase-destinder-lfg.png'
-import Profile from '../../img/showcase-destinder-profile.png'
-import HomeFull from '../../img/destinder-home.png'
-import Ft1Full from '../../img/destinder-ft-1.png'
-import LfgFull from '../../img/destinder-lfg.png'
-import ProfileFull from '../../img/destinder-profile.png'
+import Home from '../../img/showcase-destinder-home-op.jpg'
+import Ft1 from '../../img/showcase-destinder-ft1-op.jpg'
+import Lfg from '../../img/showcase-destinder-lfg.jpg'
+import Profile from '../../img/showcase-destinder-profile-op.jpg'
+import HomeFull from '../../img/destinder-home-op.jpg'
+import Ft1Full from '../../img/destinder-ft-1-op.jpg'
+import LfgFull from '../../img/destinder-lfg-op.jpg'
+import ProfileFull from '../../img/destinder-profile-op.jpg'
 
 
 class Destinder extends Component {

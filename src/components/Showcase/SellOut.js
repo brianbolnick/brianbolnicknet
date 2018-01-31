@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import Layout from './Layout'
 import { Image, Modal, Divider, Grid } from 'semantic-ui-react';
-import Home from '../../img/showcase-sellout-home.png'
-import Listings from '../../img/showcase-sellout-listings.png'
-import Login from '../../img/showcase-sellout-login.png'
-import HomeFull from '../../img/sellout-home.png'
-import ListingsFull from '../../img/sellout-listings.png'
-import LoginFull from '../../img/sellout-login.png'
+import Home from '../../img/showcase-sellout-home-op.jpg'
+import Listings from '../../img/showcase-sellout-listings-op.jpg'
+import Login from '../../img/showcase-sellout-login-op.jpg'
+import HomeFull from '../../img/sellout-home-op.jpg'
+import ListingsFull from '../../img/sellout-listings-op.jpg'
+import LoginFull from '../../img/sellout-login-op.jpg'
 
 
 class SellOut extends Component {
