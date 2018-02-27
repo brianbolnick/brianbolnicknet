@@ -1,20 +1,22 @@
 import React, { Component } from 'react'
 import Layout from './Layout'
 import { Image, Modal, Divider, Grid } from 'semantic-ui-react';
-import Home from '../../img/showcase-icpm-dashboard.png'
-import HomeFull from '../../img/icpm-dashboard.png'
-import Notes from '../../img/showcase-icpm-project-notes.png'
-import NotesFull from '../../img/icpm-project-notes.png'
-import Tasks from '../../img/showcase-icpm-project-tasks.png'
-import TasksFull from '../../img/icpm-project-tasks.png'
+import Home from '../../img/showcase-destinder-home-op.jpg'
+import Ft1 from '../../img/showcase-destinder-ft1-op.jpg'
+import Lfg from '../../img/showcase-destinder-lfg.jpg'
+import Profile from '../../img/showcase-destinder-profile-op.jpg'
+import HomeFull from '../../img/destinder-home-op.jpg'
+import Ft1Full from '../../img/destinder-ft-1-op.jpg'
+import LfgFull from '../../img/destinder-lfg-op.jpg'
+import ProfileFull from '../../img/destinder-profile-op.jpg'
 
 
-class Icpm extends Component {
+class Gilagoat extends Component {
     render() {
         return (
             <Layout>
                 <div style={{ textAlign: 'center', minHeight: '100%' }}>
-                    <div className='showcase-heading'>IC PM</div>
+                    <div className='showcase-heading'>GILAGOAT</div>
                     <div className='single-showcase-container'>
                         <Divider hidden style={{ marginBottom: '30px' }} />
                         <Grid columns={2} doubling>
@@ -35,7 +37,7 @@ class Icpm extends Component {
                                                 <div className="showcase-type">BACK</div>
                                             </Grid.Column>
                                             <Grid.Column textAlign='centered' computer={4} mobile={8}>
-                                                <div className="showcase-value">MONGO</div>
+                                                <div className="showcase-value">MYSQL</div>
                                                 <div className="showcase-type">DB</div>
                                             </Grid.Column>
 
@@ -46,32 +48,37 @@ class Icpm extends Component {
                             <Divider hidden />
                             <Grid.Row>
                                 <div className="showcase-details">
-                                    ICPM is a project management tool I am currently building to learn the MERN stack. 
-                                    It will feature a project dashboard allowing the user to save and update various tasks
-                                    as well as send emails from predefined templates.
+                                    This website is for Gilagoat popup camper trailers. It is currently in progress. 
+                                    This is a side job done for freelancing work to showcase the company's product.
                                 </div>
                             </Grid.Row>
                             <Divider hidden />
                             <Grid.Row>
                                 <Grid.Column computer={8}>
                                     <Modal closeIcon trigger={<Image src={Home} fluid className="main-showcase-img" />}>
-                                        <Image src={HomeFull} fluid />
+                                        <Image src={HomeFull} fluid  />
                                     </Modal>
-                                </Grid.Column>                            
+
+                                </Grid.Column>
                                 <Grid.Column computer={8}>
-                                    <Modal closeIcon trigger={<Image src={Tasks} fluid className="main-showcase-img" />}>
-                                        <Image src={TasksFull} fluid />
+                                    <Modal closeIcon trigger={<Image src={Ft1} fluid className="main-showcase-img" />}>
+                                        <Image src={Ft1Full} fluid  />
                                     </Modal>
-                                </Grid.Column>                            
+                                </Grid.Column>
                                 <Grid.Column computer={8}>
-                                    <Modal closeIcon trigger={<Image src={Notes} fluid className="main-showcase-img" />}>
-                                        <Image src={NotesFull} fluid />
+                                    <Modal closeIcon trigger={<Image src={Lfg} fluid className="main-showcase-img" />}>
+                                        <Image src={LfgFull} fluid  />
                                     </Modal>
-                                </Grid.Column>                            
+                                </Grid.Column>
+                                <Grid.Column computer={8}>
+                                    <Modal closeIcon trigger={<Image src={Profile} fluid className="main-showcase-img" />}>
+                                        <Image src={ProfileFull} fluid />
+                                    </Modal>
+                                </Grid.Column>
                             </Grid.Row>
                             <Grid.Row style={{ marginBottom: '100px' }}>
                                 <Grid.Column textAlign='centered'>
-                                    <a href="https://icpm.herokuapp.com/" className="showcase-link">VISIT THE SITE</a>
+                                    <a href="https://destinder.com" className="showcase-link">VISIT THE SITE</a>
                                 </Grid.Column>
                             </Grid.Row>
                             <Divider hidden />
@@ -83,4 +90,4 @@ class Icpm extends Component {
     }
 }
 
-export default Icpm;
+export default Destinder;

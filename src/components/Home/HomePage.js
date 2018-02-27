@@ -13,7 +13,7 @@ import NavHeader from './Header';
 import Footer from './Footer';
 import DestinderHome from '../../img/destinder-home-op.jpg'
 import SellOutHome from '../../img/sellout-home-op.jpg'
-import IcpmHome from '../../img/icpm-home-op.jpg'
+import IcpmHome from '../../img/icpm-dashboard.png'
 
 
 class TypedHeader extends React.Component {

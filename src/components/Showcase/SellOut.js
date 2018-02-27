@@ -3,10 +3,14 @@ import Layout from './Layout'
 import { Image, Modal, Divider, Grid } from 'semantic-ui-react';
 import Home from '../../img/showcase-sellout-home-op.jpg'
 import Listings from '../../img/showcase-sellout-listings-op.jpg'
-import Login from '../../img/showcase-sellout-login-op.jpg'
+import Login from '../../img/showcase-sellout-login-form.gif'
 import HomeFull from '../../img/sellout-home-op.jpg'
 import ListingsFull from '../../img/sellout-listings-op.jpg'
-import LoginFull from '../../img/sellout-login-op.jpg'
+import LoginFull from '../../img/sellout-login-form.gif'
+import SingleListing from '../../img/showcase-sellout-listing.png'
+import SingleListingFull from '../../img/sellout-listing.png'
+import Profile from '../../img/showcase-sellout-profile.png'
+import ProfileFull from '../../img/sellout-profile.png'
 
 
 class SellOut extends Component {
@@ -62,6 +66,16 @@ class SellOut extends Component {
                                 <Grid.Column computer={8}>
                                     <Modal closeIcon trigger={<Image src={Login} fluid className="main-showcase-img" />}>
                                         <Image src={LoginFull} fluid />
+                                    </Modal>
+                                </Grid.Column>
+                                <Grid.Column computer={8}>
+                                    <Modal closeIcon trigger={<Image src={Profile} fluid className="main-showcase-img" />}>
+                                        <Image src={ProfileFull} fluid />
+                                    </Modal>
+                                </Grid.Column>
+                                <Grid.Column computer={8}>
+                                    <Modal closeIcon trigger={<Image src={SingleListing} fluid className="main-showcase-img" />}>
+                                        <Image src={SingleListingFull} fluid />
                                     </Modal>
                                 </Grid.Column>
                                 <Grid.Column computer={8}>
