@@ -10,6 +10,7 @@ import Destinder from './Showcase/Destinder.js';
 import SellOut from './Showcase/SellOut.js';
 import Icpm from './Showcase/Icpm.js';
 import About from './Home/About.js';
+import Spin from './Home/SpinDemo.js';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { Route, withRouter, Switch } from 'react-router-dom';
 import { getQueryParams } from '../utils';
@@ -63,6 +64,7 @@ class App extends Component {
           <Route path="/icpm" exact component={Icpm} />
           <Route path="/about" exact component={About} />
           <Route path="/canvas_grades" exact component={Grades} />
+          <Route path="/spin-demo" exact component={Spin} />
           <Route path="/auth_error" exact component={AuthError}  />
           <Route component={NotFound} />
         </Switch>
