@@ -9,6 +9,7 @@ import Grades from './Bio/Grades.js';
 import Destinder from './Showcase/Destinder.js';
 import SellOut from './Showcase/SellOut.js';
 import Icpm from './Showcase/Icpm.js';
+import Gilagoat from './Showcase/Gilagoat.js';
 import About from './Home/About.js';
 import Spin from './Home/SpinDemo.js';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
@@ -62,6 +63,7 @@ class App extends Component {
           <Route path="/resume" exact component={Resume}  />
           <Route path="/sellout" exact component={SellOut} />
           <Route path="/icpm" exact component={Icpm} />
+          <Route path="/gilagoat" exact component={Gilagoat} />
           <Route path="/about" exact component={About} />
           <Route path="/canvas_grades" exact component={Grades} />
           <Route path="/spin-demo" exact component={Spin} />

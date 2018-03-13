@@ -14,6 +14,7 @@ import Footer from './Footer';
 import DestinderHome from '../../img/destinder-home-op.jpg'
 import SellOutHome from '../../img/sellout-home-op.jpg'
 import IcpmHome from '../../img/icpm-dashboard.png'
+import GilagoatHome from '../../img/gilagoat-home.gif'
 
 
 class TypedHeader extends React.Component {
@@ -93,6 +94,18 @@ class Second extends Component {
                                     <h4>Project Management Tool for Canvas IC's</h4>
                                 </figcaption>
                                 <Link to='/icpm' />
+                            </figure>
+                        </div>
+                    </Grid.Column>
+                    <Grid.Column style={{ paddingTop: '0' }}>
+                        <div className="showcase-item">
+                            <figure className="showcase-figure">
+                                <img src={GilagoatHome} width='100%' alt='gilagoat' />
+                                <figcaption>
+                                    <h3>Gilagoat</h3>
+                                    <h4>Popup Trailer Business</h4>
+                                </figcaption>
+                                <Link to='/gilagoat' />
                             </figure>
                         </div>
                     </Grid.Column>
@@ -216,6 +229,9 @@ class HomePage extends Component {
                         offset={2.2}
                         speed={-0.1}
                     >
+                        <div style={{ textAlign: 'center' }}>
+                            <Header as='h1' className="portfolio-header" >More Coming Soon!</Header>
+                        </div>
                         {/* <Third clickEvent={() => this.refs.parallax.scrollTo(0)} /> */}
                         <Footer />
                     </Parallax.Layer>

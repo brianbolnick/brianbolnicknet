@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import Layout from './Layout'
 import { Image, Modal, Divider, Grid } from 'semantic-ui-react';
-import Home from '../../img/showcase-destinder-home-op.jpg'
-import Ft1 from '../../img/showcase-destinder-ft1-op.jpg'
-import Lfg from '../../img/showcase-destinder-lfg.jpg'
-import Profile from '../../img/showcase-destinder-profile-op.jpg'
-import HomeFull from '../../img/destinder-home-op.jpg'
-import Ft1Full from '../../img/destinder-ft-1-op.jpg'
-import LfgFull from '../../img/destinder-lfg-op.jpg'
-import ProfileFull from '../../img/destinder-profile-op.jpg'
+import Home from '../../img/showcase-gilagoat-home.gif'
+import HomeFull from '../../img/gilagoat-home.gif'
+import Login from '../../img/showcase-gilagoat-login.png'
+import LoginFull from '../../img/gillagoat-login.png'
+import Admin from '../../img/showcase-gilagoat-admin.png'
+import AdminFull from '../../img/gilagoat-admin.png'
+
+
 
 
 class Gilagoat extends Component {
@@ -37,7 +37,7 @@ class Gilagoat extends Component {
                                                 <div className="showcase-type">BACK</div>
                                             </Grid.Column>
                                             <Grid.Column textAlign='centered' computer={4} mobile={8}>
-                                                <div className="showcase-value">MYSQL</div>
+                                                <div className="showcase-value">MONGO</div>
                                                 <div className="showcase-type">DB</div>
                                             </Grid.Column>
 
@@ -48,7 +48,7 @@ class Gilagoat extends Component {
                             <Divider hidden />
                             <Grid.Row>
                                 <div className="showcase-details">
-                                    This website is for Gilagoat popup camper trailers. It is currently in progress. 
+                                    This website is for Gilagoat popup camper trailers. It is currently in progress.
                                     This is a side job done for freelancing work to showcase the company's product.
                                 </div>
                             </Grid.Row>
@@ -56,29 +56,23 @@ class Gilagoat extends Component {
                             <Grid.Row>
                                 <Grid.Column computer={8}>
                                     <Modal closeIcon trigger={<Image src={Home} fluid className="main-showcase-img" />}>
-                                        <Image src={HomeFull} fluid  />
-                                    </Modal>
-
-                                </Grid.Column>
-                                <Grid.Column computer={8}>
-                                    <Modal closeIcon trigger={<Image src={Ft1} fluid className="main-showcase-img" />}>
-                                        <Image src={Ft1Full} fluid  />
+                                        <Image src={HomeFull} fluid />
                                     </Modal>
                                 </Grid.Column>
                                 <Grid.Column computer={8}>
-                                    <Modal closeIcon trigger={<Image src={Lfg} fluid className="main-showcase-img" />}>
-                                        <Image src={LfgFull} fluid  />
+                                    <Modal closeIcon trigger={<Image src={Login} fluid className="main-showcase-img" />}>
+                                        <Image src={LoginFull} fluid />
                                     </Modal>
                                 </Grid.Column>
                                 <Grid.Column computer={8}>
-                                    <Modal closeIcon trigger={<Image src={Profile} fluid className="main-showcase-img" />}>
-                                        <Image src={ProfileFull} fluid />
+                                    <Modal closeIcon trigger={<Image src={Admin} fluid className="main-showcase-img" />}>
+                                        <Image src={AdminFull} fluid />
                                     </Modal>
                                 </Grid.Column>
                             </Grid.Row>
                             <Grid.Row style={{ marginBottom: '100px' }}>
                                 <Grid.Column textAlign='centered'>
-                                    <a href="https://destinder.com" className="showcase-link">VISIT THE SITE</a>
+                                    <a href="https://gilagoat.herokuapp.com" className="showcase-link">VISIT THE SITE</a>
                                 </Grid.Column>
                             </Grid.Row>
                             <Divider hidden />
@@ -90,4 +84,4 @@ class Gilagoat extends Component {
     }
 }
 
-export default Destinder;
+export default Gilagoat;
