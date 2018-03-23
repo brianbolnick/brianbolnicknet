@@ -1,241 +1,199 @@
 import React, { Component } from 'react';
-import { Menu, Header, Image, Grid, Table } from 'semantic-ui-react';
-import { Animate } from 'grommet';
+import { Icon } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
-import Typed from 'typed.js';
-import Pulse from 'grommet/components/icons/Pulse';
-import DownIcon from 'grommet/components/icons/base/Down';
-import Parallax from 'react-springy-parallax';
-import BG from '../../img/venice2.jpg';
-import Logo from '../../img/BB2.png';
-import '../../css/Home.css';
-import NavHeader from './Header';
-import Footer from './Footer';
-import DestinderHome from '../../img/destinder-home-op.jpg'
-import SellOutHome from '../../img/sellout-home-op.jpg'
-import IcpmHome from '../../img/icpm-dashboard.png'
-import GilagoatHome from '../../img/gilagoat-home.gif'
+import Photo from '../../img/me-clip.png'
+import IcpmLogo from '../../img/icpm-demo.png'
+import DestinderLogo from '../../img/destiny-demo.png'
+import GilagoatLogo from '../../img/gilagoat-demo.png'
+import SelloutLogo from '../../img/sellout-demo.png'
+import ReactDOM from 'react-dom';
+import Footer from './Footer'
 
 
-class TypedHeader extends React.Component {
-    componentDidMount() {
-        const options = {
-            strings: [
-                'Husband', "Father", "Full Stack Developer",
-                "Hockey Player", "Mormon", "Snowboarder",
-                "Italian Speaker", "Chef", "Apple Enthusiast"
-            ],
-            loop: true,
-            startDelay: 2000,
-            backDelay: 1000,
-            typeSpeed: 80,
-            showCursor: true,
-            cursorChar: "|",
-            shuffle: true
-        };
-        // this.el refers to the <span> in the render() method
-        this.typed = new Typed(this.el, options);
-    }
-
-    componentWillUnmount() {
-        // Make sure to destroy Typed instance on unmounting
-        // to prevent memory leaks
-        this.typed.destroy();
-    }
-
+class Nav extends Component {
     render() {
         return (
-            <span ref={(el) => { this.el = el; }} />
-        );
-    }
-}
-
-class Second extends Component {
-
-    render() {
-
-
-        return (
-            <div className="showcase-container">
-                <div style={{ textAlign: 'center' }}>
-                    <Header as='h1' className="portfolio-header" >Portfolio</Header>
+            <div className={`new-nav ${this.props.navClass}`}>
+                <div className="brand">Brian Bolnick</div>
+                <div className="nav-links">
+                    <Link to='/' className='new-nav-item'>
+                        Projects
+                    </Link>
+                    <a href='https://s3-us-west-2.amazonaws.com/brianbolnicknet/resume.pdf' className='new-nav-item' target='_blank' rel="noopener noreferrer">
+                        Resume
+                    </a>
+                    <a href='mailto:brianbolnick+web@gmail.com' className='new-nav-item'>
+                        Contact
+                    </a>
                 </div>
-                <Grid doubling columns={2} className="showcase-grid">
-                    <Grid.Column>
-                        <div className="showcase-item">
-                            <figure className="showcase-figure">
-                                <img src={DestinderHome} width='100%' alt='destinder' />
-                                <figcaption>
-                                    <h3>Destinder</h3>
-                                    <h4>Looking For Group and Stat Tracker for Destiny the Game</h4>
-                                </figcaption>
-                                <Link to='/destinder' />
-                            </figure>
-                        </div>
-                    </Grid.Column>
-                    <Grid.Column>
-                        <div className="showcase-item">
-                            <figure className="showcase-figure">
-                                <img src={SellOutHome} width='100%' alt='sellout' />
-                                <figcaption>
-                                    <h3>SellOut</h3>
-                                    <h4>Classifieds App for College Students</h4>
-                                </figcaption>
-                                <Link to='/sellout' />
-                            </figure>
-                        </div>
-                    </Grid.Column>
-                    <Grid.Column style={{ paddingTop: '0' }}>
-                        <div className="showcase-item">
-                            <figure className="showcase-figure">
-                                <img src={IcpmHome} width='100%' alt='icpm' />
-                                <figcaption>
-                                    <h3>IC PM Tool</h3>
-                                    <h4>Project Management Tool for Canvas IC's</h4>
-                                </figcaption>
-                                <Link to='/icpm' />
-                            </figure>
-                        </div>
-                    </Grid.Column>
-                    <Grid.Column style={{ paddingTop: '0' }}>
-                        <div className="showcase-item">
-                            <figure className="showcase-figure">
-                                <img src={GilagoatHome} width='100%' alt='gilagoat' />
-                                <figcaption>
-                                    <h3>Gilagoat</h3>
-                                    <h4>Popup Trailer Business</h4>
-                                </figcaption>
-                                <Link to='/gilagoat' />
-                            </figure>
-                        </div>
-                    </Grid.Column>
-                </Grid>
-            </div>
-        )
-    }
-}
-
-class Landing extends Component {
-    render() {
-        return (
-            <div>
-                <Animate enter={{ "animation": "fade", "duration": 2000, "delay": 1000 }} keep={true}>
-                    <Image src={Logo} size='medium' onClick={this.props.clickEvent} />
-                    <Header className="typed-header" as='h1'><TypedHeader /></Header>
-
-                    <Menu fluid widths={1} fixed='bottom' secondary >
-                        <Menu.Menu>
-                            <Menu.Item>
-                                <Pulse icon={<DownIcon />} onClick={this.props.clickEvent} />
-                            </Menu.Item>
-                        </Menu.Menu>
-                    </Menu>
-                </Animate>
-            </div>
-        )
-    }
-}
-
-// eslint-disable-next-line
-class Third extends Component {
-    render() {
-        return (
-            <div className="table-container">
-                <Table basic='very' celled collapsing>
-                    <Table.Header>
-                        <Table.Row>
-                            <Table.HeaderCell>Project</Table.HeaderCell>
-                            <Table.HeaderCell>Front</Table.HeaderCell>
-                            <Table.HeaderCell>Back</Table.HeaderCell>
-                            <Table.HeaderCell>Description</Table.HeaderCell>
-                        </Table.Row>
-                    </Table.Header>
-
-                    <Table.Body>
-                        <Table.Row>
-                            <Table.Cell>
-                                <Header as='h4' image>
-                                    <Header.Content>
-                                        Bulk Content Migration Station
-                                <Header.Subheader>Instructure - Content Migration Specialist</Header.Subheader>
-                                    </Header.Content>
-                                </Header>
-                            </Table.Cell>
-                            <Table.Cell>
-                                Rails
-                        </Table.Cell>
-                            <Table.Cell>
-                                Rails
-                        </Table.Cell>
-                            <Table.Cell>
-                                An internal tool to help the automation and reporting process of bulk migrating LMS content to Canvas
-                        </Table.Cell>
-                        </Table.Row>
-                        <Table.Row>
-                            <Table.Cell>
-                                <Header as='h4' image>
-                                    <Header.Content>
-                                        Canvas Admin Scripts
-                                <Header.Subheader>Instructure - Implementation Project Manager</Header.Subheader>
-                                    </Header.Content>
-                                </Header>
-                            </Table.Cell>
-                            <Table.Cell>
-                                Ruby
-                        </Table.Cell>
-                            <Table.Cell>
-                                Ruby
-                        </Table.Cell>
-                            <Table.Cell>
-                                A variety of scripts custom built to assist in the automation of many processes for Higher-Ed schools.
-                        </Table.Cell>
-                        </Table.Row>
-                    </Table.Body>
-                </Table>
             </div>
         )
     }
 }
 
 class HomePage extends Component {
-    render() {
-        const styles = {
-            color: 'white',
-            display: 'flex', alignItems: 'center', justifyContent: 'center'
+    constructor(props) {
+        super(props);
+        this.state = {
+            navClass: ''
         }
+        this.handleScroll = this.handleScroll.bind(this);
+        this.scrollToFirst = this.scrollToFirst.bind(this);
+    }
+
+    componentDidMount() {
+        window.addEventListener('scroll', this.handleScroll);
+    };
+
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.handleScroll);
+    };
+
+    scrollToFirst(event) {
+        const tesNode = ReactDOM.findDOMNode(this.refs.first)
+        window.scrollTo(0, tesNode.offsetTop);
+    }
+
+    handleScroll(event) {
+        const navHeight = 20;
+        var refOffset = 0;
+        const newOffset = window.scrollY || window.pageYOffset;
+
+        if (newOffset > navHeight) {
+            if (newOffset > refOffset) {
+                //transition out 
+                this.setState({ navClass: 'nav2' })
+            } else {
+                this.setState({ navClass: '' })
+            }
+            refOffset = newOffset;
+        } else {
+            //transition back in
+            this.setState({ navClass: '' })
+        }
+    };
+    render() {
+
         return (
             <div>
-                <Parallax ref="parallax" pages={3.2}>
-                    <Parallax.Layer offset={0} speed={0} factor={3.3} style={{ backgroundImage: `url(${BG})`, backgroundSize: 'cover', backgroundPositionY: 'center' }} />
-                    <Parallax.Layer offset={3} speed={1} style={{ backgroundColor: '#87BCDE' }} />
-
-                    <Parallax.Layer
-                        offset={0}
-                        speed={0.5}
-                        style={styles}
-                    >
-                        <NavHeader />
-                        <Landing token={this.props.token} clickEvent={() => this.refs.parallax.scrollTo(1.2)} />
-                    </Parallax.Layer>
-
-                    <Parallax.Layer
-                        offset={1.2}
-                        speed={-0.1}
-                    >
-                        <Second clickEvent={() => this.refs.parallax.scrollTo(2.2)} />
-                    </Parallax.Layer>
-
-                    <Parallax.Layer
-                        offset={2.2}
-                        speed={-0.1}
-                    >
-                        <div style={{ textAlign: 'center' }}>
-                            <Header as='h1' className="portfolio-header" >More Coming Soon!</Header>
+                <Nav navClass={this.state.navClass} />
+                <div className="home-top-container">
+                    <div className="top-content">
+                        <div className="top-title">Hello!</div>
+                        <div className="top-desc">
+                            I'm a Software Engineer and Designer focused on web development. Majoring in Information Systems at the University of Utah.
                         </div>
-                        {/* <Third clickEvent={() => this.refs.parallax.scrollTo(0)} /> */}
-                        <Footer />
-                    </Parallax.Layer>
-                </Parallax>
+                        <div className="top-desc">
+                            Currently Software Engineer III at <a href="https://lds.org" className="inline-link" target="_blank" rel="noopener noreferrer">The Church of Jesus Christ of Latter-Day Saints</a>.
+                            Previously at <a href="https://instructure.com" className="inline-link" target="_blank" rel="noopener noreferrer">Instructure. </a>
+                        </div>
+                    </div>
+                    <div className="top-image">
+                        <img src={Photo} alt="" className="self-image" />
+                    </div>
+                </div>
+                <div className="scroll-container">
+                    <a href="#main-content">
+                        <Icon name='angle down' size='huge' />
+                    </a>
+                </div>
+                <div className="main-content" id="main-content" ref="first">
+                    <div className="project-container">
+                        <Link to='icpm'>
+                            <div className="project-show">
+                                <div className="parent-container" id="icpm">
+                                    <div className="child-container" style={{ width: '450px', marginLeft: '25px' }}>
+                                        <img src={IcpmLogo} alt="" className="child-img" />
+                                    </div>
+                                </div>
+                            </div>
+                        </Link>
+                        <div className="project-details">
+                            <div className="project-title">
+                                IC PROJECT MANAGEMENT
+                                </div>
+                            <div className="project-desc">
+                                React/Redux and Node.js application built to better streamline the Canvas
+                                Implementation process and management. Includes project dashboard and tracking,
+                                email template generator, contact lists, and more.
+
+                            </div>
+                            <div className="project-dates">
+                                INSTRUCTURE • 2017 - 2018
+                            </div>
+                        </div>
+                    </div>
+                    <div className="project-container">
+                        <Link to='destinder'>
+                            <div className="project-show">
+                                <div className="parent-container" id="destinder">
+                                    <div className="child-container" style={{ width: '450px', marginLeft: '0px' }}>
+                                        <img src={DestinderLogo} alt="" className="child-img" id="destinder-logo"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </Link>
+                        <div className="project-details">
+                            <div className="project-title">
+                                DESTINDER
+                            </div>
+                            <div className="project-desc">
+                                React/Redux and Rails application that helps players of
+                                 {' '} <a href="https://www.destinythegame.com/" className="inline-link" target="_blank" rel="noopener noreferrer">Destiny the Game</a>{' '}
+                                track game stats and find people to play with. Implements JWT and oAuth authentication to pull real-time data from Bungie's API.
+                            </div>
+                            <div className="project-dates">
+                                PERSONAL • 2017 - PRESENT
+                            </div>
+                        </div>
+                    </div>
+                    <div className="project-container">
+                        <Link to='sellout'>
+                            <div className="project-show">
+                                <div className="parent-container" id='sellout'>
+                                    <div className="child-container" style={{ width: '450px', marginLeft: '0px' }}>
+                                        <img src={SelloutLogo} alt="" className="child-img" id="sellout-logo"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </Link>
+                        <div className="project-details">
+                            <div className="project-title">
+                                SELLOUT
+                            </div>
+                            <div className="project-desc">
+                                PHP application developed for IS 4460 (Web Application Development) at the University of Utah.
+                                Classifieds site made specifically for College students to create and sell product listings.
+                            </div>
+                            <div className="project-dates">
+                                UNIVERSITY OF UTAH • 2018
+                            </div>
+                        </div>
+                    </div>
+                    <div className="project-container">
+                        <Link to='gilagoat'>
+                            <div className="project-show">
+                                <div className="parent-container" id='gilagoat'>
+                                    <div className="child-container" style={{ width: '450px', marginLeft: '0px' }}>
+                                        <img src={GilagoatLogo} alt="" className="child-img" id="gilagoat-logo"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </Link>
+                        <div className="project-details">
+                            <div className="project-title">
+                                GILAGOAT
+                            </div>
+                            <div className="project-desc">
+                                React/Redux and Node.js application built to showcase the company's trailer product.
+                            </div>
+                            <div className="project-dates">
+                                FREELANCE • 2018 - PRESENT
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <Footer />
             </div>
 
         )

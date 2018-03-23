@@ -1,28 +1,33 @@
 import React, { Component } from 'react';
-import { Menu, Icon } from 'semantic-ui-react';
+import { Icon } from 'semantic-ui-react';
 import '../../css/Home.css';
-import ReactIcon from 'grommet/components/icons/base/PlatformReactjs';
-import RubyIcon from 'grommet/components/icons/base/Diamond';
-import { Anchor } from 'grommet';
-
-
 
 class FooterContent extends Component {
   render() {
     return (
-      <Menu fixed='bottom' secondary >
-        <Menu.Menu position='left'>
-          <Menu.Item>
-            <Icon name='mail' />
-            <Anchor className='prof-anchor' style={{color: '#f5f5f5' }} label='Contact' href='mailto:brianbolnick+web@gmail.com' primary={false} />
-          </Menu.Item>
-        </Menu.Menu>
-        <Menu.Menu position='right'>
-          <Menu.Item>
-            <span style={{ paddingRight: '10px' }}>Made with </span><ReactIcon className='react-icon' /> <span style={{ paddingLeft: '10px', paddingRight: '10px' }}> and </span> <RubyIcon className='ruby-icon' /> <span style={{ paddingLeft: '10px' }}> by Brian Bolnick </span>
-          </Menu.Item>
-        </Menu.Menu>
-      </Menu>
+      <div className="footer">
+        <div className="footer-left">
+          <div className="copyright">
+            Created by Brian Bolnick &copy; 2018
+            </div>
+        </div>
+        <div className="footer-right">
+          <div className="social">
+            <a href="//linkedin.com/in/brianbolnick/">
+              <Icon name='linkedin' size="large" style={{ color: "#414141" }} link />
+            </a>
+            <a href="//github.com/brianbolnick">
+              <Icon name='github' size="large" style={{ color: "#414141" }} link />
+            </a>
+            <a href="//twitter.com/brianbolnick">
+              <Icon name='twitter' size="large" style={{ color: "#414141" }} link />
+            </a>
+            <a href="//dribbble.com/brianbolnick">
+              <Icon name='dribble' size="large" style={{ color: "#414141" }} link />
+            </a>
+          </div>
+        </div>
+      </div>
     )
   }
 }
