@@ -1,25 +1,29 @@
 body {
-  font-family: Lato,'Helvetica Neue',Arial,Helvetica,sans-serif;
+  font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
   /* font-family: 'Montserrat', sans-serif; */
 }
-html, body, #app, #app>div {
+
+html,
+body,
+#app,
+#app>div {
   height: 100%;
 }
 
 div#app {
   height: 100%;
 }
-/* Responsive Branding */
 
+/* Responsive Branding */
 
 @media only screen and (max-width: 767px) and (min-width: 320px) {
   .hide-on-mobile {
-      display: none !important;
+    display: none !important;
   }
 }
 
 @media only screen and (min-width: 767px) {
   .hide-on-med-and-up {
-      display: none !important;
+    display: none !important;
   }
 }
