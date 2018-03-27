@@ -6,6 +6,7 @@ import IcpmLogo from '../img/icpm-demo.png'
 import DestinderLogo from '../img/destiny-demo.png'
 import GilagoatLogo from '../img/gilagoat-demo.png'
 import SelloutLogo from '../img/sellout-demo.png'
+import CanvasLogo from '../img/canvas.png'
 import Layout from './Layout'
 
 
@@ -126,6 +127,29 @@ class HomePage extends Component {
                             </div>
                             <div className="project-dates">
                                 FREELANCE • 2018 - PRESENT
+                            </div>
+                        </div>
+                    </div>
+                    <div className="project-container">
+                        <a href='//github.com/unsupported/canvas' target="_blank" rel="noopener noreferrer">
+                            <div className="project-show">
+                                <div className="parent-container" id='canvas'>
+                                    <div className="child-container" id="canvas-child">
+                                        <img src={CanvasLogo} alt="" className="child-img" id="canvas-logo"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <div className="project-details">
+                            <div className="project-title">
+                                CANVAS IMPLEMENTATIONS
+                            </div>
+                            <div className="project-desc">
+                                A collection of Ruby scripts created for automating manual workflows to improve efficiencies 
+                                (links to shared Github repository)
+                            </div>
+                            <div className="project-dates">
+                                IMPLEMENTATION CONSULTANT • 2015 - 2018
                             </div>
                         </div>
                     </div>
