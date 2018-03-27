@@ -8,7 +8,7 @@ import SellOut from './Sellout.js';
 import Icpm from './Icpm.js';
 import Gilagoat from './Gilagoat.js';
 import About from './About.js';
-import Spin from './SpinDemo.js';
+// import Spin from './SpinDemo.js';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { Route, withRouter, Switch } from 'react-router-dom';
 
@@ -27,7 +27,7 @@ class App extends Component {
             <Route path="/icpm" exact component={Icpm} />
             <Route path="/gilagoat" exact component={Gilagoat} />
             <Route path="/about" exact component={About} />
-            <Route path="/spin-demo" exact component={Spin} />
+            {/* <Route path="/spin-demo" exact component={Spin} /> */}
             <Route path="/auth_error" exact component={AuthError} />
             <Route component={NotFound} />
           </Switch>
