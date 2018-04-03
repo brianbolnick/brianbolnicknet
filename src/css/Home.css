@@ -70,11 +70,10 @@ img.ui.fluid.image.main-showcase-img:hover {
     font-size: 0.9rem;
     margin-top: 5px;
     letter-spacing: 2px;
-    font-weight: 700;
-    color: #212121a1;
+    color: #212121;
     padding: 0px 20px;
-    background: #f5f5f5;
-    ;
+    background: #fff;
+    font-weight: 400;
 }
 
 .showcase-details {
@@ -146,7 +145,7 @@ a.showcase-link:hover {
     top: 0px;
     transition: 0.2s ease;
     padding-top: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 15px;
     box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px;
     flex-flow: row wrap;
 }
@@ -619,6 +618,7 @@ i.large.icon, i.large.icons {
     }
     .showcase-main-img {
         height: 200px;
+        top: calc(100vh - 400px);
     }
     .showcase-title {
         line-height: 4rem;
