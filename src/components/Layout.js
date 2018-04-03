@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Nav from './Nav.js';
+import MobileNav from './MobileNav';
 import Footer from './Footer.js';
 import ReactDOM from 'react-dom';
 
@@ -47,7 +48,8 @@ class Layout extends Component {
     render() {
         return (
             <div style={{ minHeight: '100vh' }}>
-                <Nav navClass={this.state.navClass} />
+                <Nav navClass={this.state.navClass}/>
+                <MobileNav navClass={this.state.navClass}/>
                 {this.props.children}
                 <Footer />
             </div>

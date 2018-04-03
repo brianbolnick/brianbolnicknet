@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export default class Nav extends Component {
     render() {
         return (
-            <div className={`new-nav ${this.props.navClass}`}>
+            <div className={`new-nav hide-on-mobile ${this.props.navClass}`}>
                 <div className="brand">Brian Bolnick</div>
                 <div className="nav-links">
                     <Link to='/' className='new-nav-item'>
