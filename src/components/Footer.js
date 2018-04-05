@@ -8,9 +8,14 @@ class TypedHeader extends React.Component {
   componentDidMount() {
     const options = {
       strings: [
-        '"But man is not made for defeat. A man can be destroyed but not defeated." - Ernest Hemingway',
-        '"Learning never exhausts the mind." - Leonardo Da Vinci',
-        '"Be yourself; everyone else is already taken." - Oscar Wilde'
+        "Be who you are and say what you feel, because those who mind don't matter and those who matter don't mind. - Dr. Seuss",
+        "There isn't a way things should be. There's just what happens, and what we do. - Terry Pratchett",
+        "It's not about how hard you can hit; it's about how hard you can get hit and keep moving forward. - Rocky Balboa",
+        "You miss 100% of the shots you never take. - Wayne Gretzky",
+        "Clear eyes, full hearts, can't lose. - Friday Night Lights",
+        "We are what we repeatedly do. Excellence, then, is not an act, but a habit. - Aristotle",
+        "Great moments are born from great opportunities. - Herb Brooks"  
+
       ],
       loop: true,
       startDelay: 500,

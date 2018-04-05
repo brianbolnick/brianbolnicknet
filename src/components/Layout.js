@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Nav from './Nav.js';
 import MobileNav from './MobileNav';
 import Footer from './Footer.js';
-import ReactDOM from 'react-dom';
 
 class Layout extends Component {
     constructor(props) {
@@ -11,7 +10,6 @@ class Layout extends Component {
             navClass: ''
         }
         this.handleScroll = this.handleScroll.bind(this);
-        this.scrollToFirst = this.scrollToFirst.bind(this);
     }
 
     componentDidMount() {
@@ -21,11 +19,6 @@ class Layout extends Component {
     componentWillUnmount() {
         window.removeEventListener('scroll', this.handleScroll);
     };
-
-    scrollToFirst(event) {
-        const tesNode = ReactDOM.findDOMNode(this.refs.first)
-        window.scrollTo(0, tesNode.offsetTop);
-    }
 
     handleScroll(event) {
         const navHeight = 20;
@@ -48,8 +41,8 @@ class Layout extends Component {
     render() {
         return (
             <div style={{ minHeight: '100vh' }}>
-                <Nav navClass={this.state.navClass}/>
-                <MobileNav navClass={this.state.navClass}/>
+                <Nav navClass={this.state.navClass} />
+                <MobileNav navClass={this.state.navClass} />
                 {this.props.children}
                 <Footer />
             </div>

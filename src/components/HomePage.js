@@ -8,10 +8,20 @@ import GilagoatLogo from '../img/gilagoat-demo.png'
 import SelloutLogo from '../img/sellout-demo.png'
 import CanvasLogo from '../img/canvas.png'
 import Layout from './Layout'
-
+import ReactDOM from 'react-dom';
 
 
 class HomePage extends Component {
+    constructor(props) {
+        super(props);
+        this.scrollToFirst = this.scrollToFirst.bind(this);
+    }
+
+    scrollToFirst(event) {
+        const testNode = ReactDOM.findDOMNode(this.refs.first)
+        window.scrollTo({ "behavior": "smooth", "top": testNode.offsetTop, "left": "0" })
+    }
+
     render() {
         return (
             <Layout>
@@ -30,10 +40,8 @@ class HomePage extends Component {
                         <img src={Photo} alt="" className="self-image" />
                     </div>
                 </div>
-                <div className="scroll-container">
-                    <a href="#main-content">
-                        <Icon name='angle down' size='huge' />
-                    </a>
+                <div className="scroll-container">                
+                    <Icon name='angle down' size='huge' id="scroll-icon" onClick={this.scrollToFirst}/>                
                 </div>
                 <div className="main-content" id="main-content" ref="first">
                     <div className="project-container">
@@ -66,7 +74,7 @@ class HomePage extends Component {
                             <div className="project-show">
                                 <div className="parent-container" id="destinder">
                                     <div className="child-container" style={{ width: '450px', marginLeft: '0px' }}>
-                                        <img src={DestinderLogo} alt="" className="child-img" id="destinder-logo"/>
+                                        <img src={DestinderLogo} alt="" className="child-img" id="destinder-logo" />
                                     </div>
                                 </div>
                             </div>
@@ -90,7 +98,7 @@ class HomePage extends Component {
                             <div className="project-show">
                                 <div className="parent-container" id='sellout'>
                                     <div className="child-container" style={{ width: '450px', marginLeft: '0px' }}>
-                                        <img src={SelloutLogo} alt="" className="child-img" id="sellout-logo"/>
+                                        <img src={SelloutLogo} alt="" className="child-img" id="sellout-logo" />
                                     </div>
                                 </div>
                             </div>
@@ -113,7 +121,7 @@ class HomePage extends Component {
                             <div className="project-show">
                                 <div className="parent-container" id='gilagoat'>
                                     <div className="child-container" style={{ width: '450px', marginLeft: '0px' }}>
-                                        <img src={GilagoatLogo} alt="" className="child-img" id="gilagoat-logo"/>
+                                        <img src={GilagoatLogo} alt="" className="child-img" id="gilagoat-logo" />
                                     </div>
                                 </div>
                             </div>
@@ -135,7 +143,7 @@ class HomePage extends Component {
                             <div className="project-show">
                                 <div className="parent-container" id='canvas'>
                                     <div className="child-container" id="canvas-child">
-                                        <img src={CanvasLogo} alt="" className="child-img" id="canvas-logo"/>
+                                        <img src={CanvasLogo} alt="" className="child-img" id="canvas-logo" />
                                     </div>
                                 </div>
                             </div>
@@ -145,7 +153,7 @@ class HomePage extends Component {
                                 CANVAS IMPLEMENTATIONS
                             </div>
                             <div className="project-desc">
-                                A collection of Ruby scripts created for automating manual workflows to improve efficiencies 
+                                A collection of Ruby scripts created for automating manual workflows to improve efficiencies
                                 (links to shared Github repository)
                             </div>
                             <div className="project-dates">
