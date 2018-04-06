@@ -81,8 +81,8 @@ class Icpm extends Component {
                         </div>
                     </div>
                     <div className="showcase-double-img">
-                        <img src={Signup} alt="" className="double-img"/>
-                        <img src={Login} alt=""  className="double-img"/>
+                        <img src={Signup} alt="" className="double-img-show"/>
+                        <img src={Login} alt=""  className="double-img-show"/>
                     </div>
                 </div>
                 <div className="showcase-fourth">
@@ -99,7 +99,7 @@ class Icpm extends Component {
                         <div className="showcase-split-title">Dashboard</div>
                     </div>
                     <div className="showcase-single-img">
-                        <img src={HomeFull} alt="" width="100%" />
+                        <img src={HomeFull} alt="" className='single-img' />
                     </div>
                 </div>
                 <div className="showcase-fifth">
@@ -114,7 +114,7 @@ class Icpm extends Component {
                         </div>
                     </div>
                     <div className="showcase-single-img">
-                        <img src={Tasks} alt="" className="single-img"/>
+                        <img src={Tasks} alt="" className="single-img-show"/>
                     </div>
                 </div>
                 <div className="showcase-sixth">
