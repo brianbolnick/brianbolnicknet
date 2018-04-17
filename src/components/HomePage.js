@@ -32,7 +32,7 @@ class HomePage extends Component {
                             I'm a Software Engineer and Designer focused on web development. Majoring in Information Systems at the University of Utah.
                         </div>
                         <div className="top-desc">
-                            Currently Software Engineer III at <a href="https://lds.org" className="inline-link" target="_blank" rel="noopener noreferrer">The Church of Jesus Christ of Latter-Day Saints</a>.
+                            Currently Software Engineer at <a href="https://lds.org" className="inline-link" target="_blank" rel="noopener noreferrer">The Church of Jesus Christ of Latter-Day Saints</a>.
                             Previously at <a href="https://instructure.com" className="inline-link" target="_blank" rel="noopener noreferrer">Instructure. </a>
                         </div>
                     </div>

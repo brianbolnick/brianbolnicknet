@@ -657,6 +657,12 @@ i.large.icons {
 img.erd {
     width: 100%;
 }
+img.erd#sellout-erd {
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex
+}
 
 i#scroll-icon:hover {
     cursor: pointer;
@@ -942,6 +948,9 @@ code {
     }
     .visit-link {
         margin-bottom: 50px;
+    }
+    img.erd#sellout-erd {
+        width: 100%;       
     }
 }
 
