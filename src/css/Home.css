@@ -490,7 +490,8 @@ i.large.icons {
 .parent-container#europe {
     /* background: linear-gradient(135deg, #ECF0F1, #D4B7A6); */
     /* background: #D4B7A6; */
-    background: #F8C6D8;
+    /* background: #F8C6D8; */
+    background: linear-gradient(115.62291889406674deg,#f8c6d7 5.272159428911362%,#afe9f9 97.18173706127305%);
 }
 
 .parent-container#gilagoat {
