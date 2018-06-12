@@ -382,6 +382,7 @@ div#main-content {
     transform: rotate(-15deg) scale(1.05) translateX(25px);
     transition: 0.2s ease;
 }
+
 .parent-container:hover .child-container img#plane {
     transform: translateY(-75px) translateX(-87px) rotate(275deg);
     transition: 0.2s ease;
@@ -487,11 +488,12 @@ i.large.icons {
     /* background: #D4B7A6; */
     background: #D75745;
 }
+
 .parent-container#europe {
     /* background: linear-gradient(135deg, #ECF0F1, #D4B7A6); */
     /* background: #D4B7A6; */
     /* background: #F8C6D8; */
-    background: linear-gradient(115.62291889406674deg,#f8c6d7 5.272159428911362%,#afe9f9 97.18173706127305%);
+    background: linear-gradient(115.62291889406674deg, #f8c6d7 5.272159428911362%, #afe9f9 97.18173706127305%);
 }
 
 .parent-container#gilagoat {
@@ -534,6 +536,7 @@ i.large.icons {
     transition: 0.2s ease;
     width: 77%;
 }
+
 #europe img {
     transition: 0.2s ease;
     margin-left: 100px;
@@ -676,6 +679,7 @@ i.large.icons {
 img.erd {
     width: 100%;
 }
+
 img.erd#sellout-erd {
     width: 65%;
     margin-left: auto;
@@ -772,6 +776,7 @@ code {
     border-radius: 5px;
     box-shadow: 0px 0px 5px #21212170;
 }
+
 .double-img-show {
     width: 50%;
     margin: 10px;
@@ -782,6 +787,7 @@ code {
     border-radius: 15px;
     box-shadow: 0px 0px 20px #21212170;
 }
+
 .single-img-show {
     width: 100%;
 }
@@ -793,15 +799,15 @@ code {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: .05em;
-    color: rgba(0,0,0,.85);
+    color: rgba(0, 0, 0, .85);
     user-select: none;
     font-size: 1rem;
-    border-color: transparent!important;
+    border-color: transparent !important;
 }
 
 .divider:not(.vertical):not(.horizontal) {
-    border-top: 1px solid rgba(34,36,38,.15);
-    border-bottom: 1px solid rgba(255,255,255,.1);
+    border-top: 1px solid rgba(34, 36, 38, .15);
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
 }
 
 /* Mobile branding  */
@@ -969,7 +975,7 @@ code {
         margin-bottom: 50px;
     }
     img.erd#sellout-erd {
-        width: 100%;       
+        width: 100%;
     }
 }
 
