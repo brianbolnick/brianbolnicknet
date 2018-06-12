@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../css/App.css';
-import Home from './HomePage.js';
+import Home from './Home/HomePage.js';
 import NotFound from './NotFound.js';
 import AuthError from './AuthError.js';
 import Destinder from './Destinder.js';

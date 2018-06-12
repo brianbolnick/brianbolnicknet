@@ -382,6 +382,10 @@ div#main-content {
     transform: rotate(-15deg) scale(1.05) translateX(25px);
     transition: 0.2s ease;
 }
+.parent-container:hover .child-container img#plane {
+    transform: translateY(-75px) translateX(-87px) rotate(275deg);
+    transition: 0.2s ease;
+}
 
 #canvas-child {
     width: 540px;
@@ -483,6 +487,11 @@ i.large.icons {
     /* background: #D4B7A6; */
     background: #D75745;
 }
+.parent-container#europe {
+    /* background: linear-gradient(135deg, #ECF0F1, #D4B7A6); */
+    /* background: #D4B7A6; */
+    background: #F8C6D8;
+}
 
 .parent-container#gilagoat {
     /* background: linear-gradient(135deg, #ECF0F1, #E6863C); */
@@ -523,6 +532,15 @@ i.large.icons {
 #sellout img {
     transition: 0.2s ease;
     width: 77%;
+}
+#europe img {
+    transition: 0.2s ease;
+    margin-left: 100px;
+    position: relative;
+    width: 77%;
+    bottom: 37px;
+    transform: rotate(260deg);
+    opacity: 0.75;
 }
 
 #destinder .child-container {
