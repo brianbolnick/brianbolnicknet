@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Plane from '../../img/plane.png'
 import ProjectContainer from './Project/ProjectContainer';
 import ProjectDetails from './Project/ProjectDetails';
