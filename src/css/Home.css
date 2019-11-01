@@ -435,6 +435,10 @@ div#main-content {
     transition: 0.2s ease;
 }
 
+img#hex {
+    height: 228px;
+}
+
 #canvas-child {
     width: 540px;
     margin-left: 13px;
@@ -543,6 +547,11 @@ i.large.icons {
     background: linear-gradient(115.62291889406674deg, #f8c6d7 5.272159428911362%, #afe9f9 97.18173706127305%);
 }
 
+.parent-container#humanize {
+    background: linear-gradient(115.62291889406674deg, #8e2de2 5.272159428911362%, #4a00e0 97.18173706127305%);
+}
+
+
 .parent-container#gilagoat {
     /* background: linear-gradient(135deg, #ECF0F1, #E6863C); */
     background: #E6863C;
@@ -585,6 +594,16 @@ i.large.icons {
 }
 
 #europe img {
+    transition: 0.2s ease;
+    margin-left: 100px;
+    position: relative;
+    width: 77%;
+    bottom: 37px;
+    transform: rotate(260deg);
+    opacity: 0.75;
+}
+
+#humamize img {
     transition: 0.2s ease;
     margin-left: 100px;
     position: relative;

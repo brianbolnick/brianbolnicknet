@@ -9,6 +9,7 @@ import ReactDOM from 'react-dom';
 import Gilagoat from './Gilagoat';
 import Sellout from './Sellout';
 import Europe from './Europe';
+import HumanizeTime from './HumanizeTime';
 
 const TopContent = () => {
     return (
@@ -53,6 +54,7 @@ class HomePage extends Component {
                 </div>
                 <div className="main-content" id="main-content" ref="first">
                     <div className="main-page-title">PERSONAL PORTFOLIO</div>
+                    <HumanizeTime />
                     <Europe />
                     <ICPM />
                     <Destinder />
